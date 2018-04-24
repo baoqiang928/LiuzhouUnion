@@ -1,0 +1,242 @@
+﻿<div class="page-content" ng-controller="ProjectCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="header smaller lighter blue">物理冲突解决</h3>
+                    <p>
+                        <label style="display: inline-block; width: 100px; text-align: center;">正向特性:</label>
+                        空载时提供张紧力
+                    </p>
+                    <p>
+                        <label style="display: inline-block; width: 100px; text-align: center;">反向特性:</label>
+                        重载时取消张紧力
+                    </p>
+                    <p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-table">选择案例</button>
+                        <button class="btn btn-primary" ng-click="Delete()">删除</button>
+                        <button class="btn btn-primary" ng-click="Delete()">查看冲突矩阵</button>
+                    </p>
+                    <div class="table-responsive">
+                        <table id="sample-table-2" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label>
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>发明原理</th>
+                                    <th>案例代码</th>
+                                    <th width="600px">解决思路</th>
+                                    <th width="300px">相关图片</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="center">
+                                        <label>
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+
+                                    <td>预加反作用</td>
+                                    <td><a>预压缩弹簧</a></td>
+                                    <td><a href="#" ui-sref="ResolveDetail">先分析问题,化繁为简,找到问题的根源所在,再想办法解决,可以多几个人商量一下,在众多解决办法中找一个最合适的</a></td>
+                                    <td>
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                    </td>
+                                    <td>
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+
+                                            <a class="red" href="#">
+                                                <i class="icon-trash bigger-130"></i>
+                                            </a>
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label>
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+
+                                    <td>分割</td>
+                                    <td><a>汽车的多段活动车顶</a></td>
+                                    <td><a href="#" ui-sref="ResolveDetail">一个有经验的得到的滴答滴答滴答滴答滴答滴答的滴答滴答滴答滴答滴答滴答的滴答滴答滴答滴答滴答滴答的问题解决者的解决思路:(这个有经验没有“”哦)首先我们需要知道,一个问题包含两个部分:问题域和解决域。大部分解决者专注于解决域,而忽视了问题本身...</a></td>
+                                    <td>
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                        <img src="\pages\conflict\F065.jpg" width="100px" />
+                                    </td>
+                                    <td>
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+
+                                            <a class="red" href="#">
+                                                <i class="icon-trash bigger-130"></i>
+                                            </a>
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="modal-table" class="modal fade" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header no-padding">
+                                <div class="table-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        <span class="white">&times;</span>
+                                    </button>
+                                    原理与案例
+                                </div>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="dd">
+                                                <ol class="dd-list">
+
+                                                    <li class="dd-item" data-id="13">
+                                                        <div class="dd2-content">
+                                                            <span class="orange">1 空间分离</span>
+                                                        </div>
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item" data-id="16">
+                                                                <div class="dd2-content">
+                                                                    1 分割
+                                                                </div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item" data-id="16">
+                                                                        <div class="dd2-content">
+                                                                            （1）将一个物体分成相互独立的部分                                         
+                                                                        </div>
+                                                                        <ol class="dd-list">
+                                                                            <li class="dd-item" data-id="16">
+                                                                                <div class="dd2-content">
+                                                                                    凹槽抑制张力  
+                                                                                    <div class="pull-right action-buttons">
+                                                                                        <a class="blue" href="#">
+                                                                                            <i class="icon-key bigger-130"></i>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+
+                                                                            <li class="dd-item" data-id="17">
+                                                                                <div class="dd2-content">
+                                                                                    微爆炸粉碎岩石                                         
+                                                                                    <div class="pull-right action-buttons">
+                                                                                        <a class="blue" href="#">
+                                                                                            <i class="icon-key bigger-130"></i>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ol>
+                                                                    </li>
+
+                                                                    <li class="dd-item" data-id="17">
+                                                                        <div class="dd2-content">
+                                                                            （2）使物体分成容易组装及拆卸的部分                                       
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                        </ol>
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item" data-id="16">
+                                                                <div class="dd2-content">
+                                                                    2 分离                                           
+                                                                </div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item" data-id="16">
+                                                                        <div class="dd2-content">
+                                                                            （1）将一个物体中的“干扰”部分分离出去                                         
+                                                                        </div>
+                                                                    </li>
+
+                                                                    <li class="dd-item" data-id="17">
+                                                                        <div class="dd2-content">
+                                                                            （2）将物体中的关键部分挑选或分离出来                                          
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+
+                                                    <li class="dd-item" data-id="15">
+                                                        <div class="dd2-content">
+                                                            <span class="orange">2 时间分离</span>
+                                                        </div>
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item dd2-item" data-id="16">
+                                                                <div class="dd2-content">
+                                                                    时间分离原理是将冲突双方在不同的时间段分离，以降低解决问题的难度。当关键子系统冲突双方在某一时间段只出现一方时，时间分离是可能的。
+                                                                </div>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="modal-footer no-margin-top">
+                                <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+                                    <i class="icon-remove"></i>
+                                    关闭
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+            </div>
+
+
+            <!-- PAGE CONTENT ENDS -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+
+<!-- inline scripts related to this page -->
+

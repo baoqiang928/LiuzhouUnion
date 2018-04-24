@@ -1,0 +1,377 @@
+﻿<div class="page-content" ng-controller="CauseEffectCtrl">
+    <div class="page-header">
+        <h1>因果分析
+            <small>
+                <i class="icon-double-angle-right"></i>
+                <a data-toggle="modal" style="cursor: pointer" data-target="#modal-table">[查看因果分析流程]</a>
+            </small>
+        </h1>
+    </div>
+    <!-- /.page-header -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-sm-6">
+                <script type='text/ng-template' id='currentProblem.html'> 
+                <div class="row">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h4 class="smaller">目前问题
+                            </h4>
+                            <span class="widget-toolbar">
+                                <a href="" ng-click="SaveCurrentProblemDes()">
+                                    <i class="icon-save"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <table style="width: 100%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <input type="text" id="Text3" class="col-xs-12 col-sm-12" ng-model="data.ProblemDescription" placeholder="请输入目前问题" /></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </script>
+                <current-problem></current-problem>
+
+                <script type='text/ng-template' id='primaryComponentParam.html'> 
+                <div class="row">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h4 class="smaller">初级功能参数列表
+                            </h4>
+                            <span class="widget-toolbar" ng-show="!ComponentParamInfoList[0].Disabled">
+                                <a href="" ng-click="ADDParamInfoOperate()">
+                                    <i class="icon-plus"></i>
+                                </a>
+                            </span>
+                            <span class="widget-toolbar" ng-show="!ComponentParamInfoList[0].Disabled">
+                                <a href="" ng-click="SaveParamInfoOperate()">
+                                    <i class="icon-save"></i>
+                                </a>
+                            </span>
+                            <span class="widget-toolbar" ng-show="ComponentParamInfoList[0].Disabled">
+                                <a href="" ng-click="UpdateParamInfoOperate()">
+                                    <i class="icon-pencil"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <table id="sample-table-2" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>问题相关元件</th>
+                                            <th>元件特征参数</th>
+                                            <th>参数类型</th>
+                                            <th ng-show="!ComponentParamInfoList[0].Disabled"></th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="ComponentParamInfo in ComponentParamInfoList">
+                                            <td>
+                                                <select ng-model="ComponentParamInfo.ComponentName" ng-disabled="ComponentParamInfo.Disabled">
+                                                    <option ng-repeat="y in SrcComponentInfoList">{{y.Name}}</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" ng-disabled="ComponentParamInfo.Disabled" class="col-xs-12 col-sm-12" ng-model="ComponentParamInfo.ParamName" /></td>
+                                            <td>
+                                                <select id="ImpactElementType" ng-disabled="ComponentParamInfo.Disabled" ng-options="v.name as v.name for v in ParamTypes" ng-model="ComponentParamInfo.ParamType"></select>
+                                            </td>
+                                            <td ng-show="!ComponentParamInfo.Disabled">
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                                    <a class="red" style="cursor: pointer" ng-click="DeleteComponentParamInfo($index)">
+                                                        <i class="icon-trash bigger-130"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </script>
+                <primary-componentparam></primary-componentparam>
+
+                <script type='text/ng-template' id='componentRel.html'> 
+                <div class="row" ng-repeat="ComponentRelInfoList in ComponentRelInfoListSection">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h4 class="smaller">功能参数列表
+                            </h4>
+                            <span class="widget-toolbar" ng-show="!ComponentRelInfoList[0].Disabled">
+                                <a href="" ng-click="ADDRelOperate($index)">
+                                    <i class="icon-plus"></i>
+                                </a>
+                            </span>
+                            <span class="widget-toolbar" ng-show="!ComponentRelInfoList[0].Disabled">
+                                <a href="" ng-click="SaveRelOperate($index)">
+                                    <i class="icon-save"></i>
+                                </a>
+                            </span>
+                            <span class="widget-toolbar" ng-show="ComponentRelInfoList[0].Disabled">
+                                <a href="" ng-click="UpdateSectionOperate($index)">
+                                    <i class="icon-pencil"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <table id="Table1" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>问题相关元件 特征参数</th>
+                                            <th>影响该参数元件</th>
+                                            <th>元件特征参数</th>
+                                            <th>参数类型</th>
+                                            <th ng-show="!ComponentRelInfoList[0].Disabled"></th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="ComponentRelInfo in ComponentRelInfoList">
+                                            <td>
+                                                <select ng-model="ComponentRelInfo.ComponentParamName" ng-disabled="ComponentRelInfo.Disabled">
+                                                    <option ng-repeat="x in PreSectionComponentList($parent.$index)|filter:{ParamType:'非独立变量'}">{{x.ImpactComponentName}} {{x.ImpactParamName}}</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select ng-disabled="ComponentRelInfo.Disabled" ng-model="ComponentRelInfo.ImpactComponentName">
+                                                    <option ng-repeat="x in SrcComponentInfoList">{{x.Name}}</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" ng-disabled="ComponentRelInfo.Disabled" class="col-xs-12 col-sm-12" ng-model="ComponentRelInfo.ImpactParamName" />
+                                            </td>
+                                            <td>
+                                                <select id="ImpactElementType" ng-disabled="ComponentRelInfo.Disabled" ng-options="v.name as v.name for v in ParamTypes" ng-model="ComponentRelInfo.ParamType"></select>
+                                            </td>
+                                            <td ng-show="!ComponentRelInfo.Disabled">
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                                    <a href="" ng-click="DelRelOperate($parent.$index,$index)" class="blue" data-toggle="modal" style="cursor: pointer">
+                                                        <i class="icon-trash bigger-130"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                </script>
+                <component-rel></component-rel>
+
+                <script type='text/ng-template' id='conflictList.html'> 
+                <div class="row" ng-hide="ConflictInfoList.length<=0">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h4 class="smaller">冲突列表
+                            </h4>
+                            <span class="widget-toolbar">
+                                <a href="" ng-click="SaveConflict()">
+                                    <i class="icon-save"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <table id="Table3" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>相关元件 独立变量参数</th>
+                                            <th>当前设置</th>
+                                            <th>改变设置</th>
+                                            <th>目前问题</th>
+                                            <th>新的问题</th>
+                                            <th><i class="icon-eye-open"></i></th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="ConflictInfo in ConflictInfoList">
+                                            <td>{{ConflictInfo.RelComponentName}} {{ConflictInfo.RelComponentParamName}}</td>
+                                            <td>
+                                                <input type="text" class="col-xs-12 col-sm-12" ng-model="ConflictInfo.CurrentConfig" /></td>
+                                            <td>
+                                                <input type="text" class="col-xs-12 col-sm-12" ng-model="ConflictInfo.ChangeConfig" /></td>
+                                            <td>
+                                                <input type="text" class="col-xs-12 col-sm-12" ng-model="ConflictInfo.CurrentProblem" /></td>
+                                            <td>
+                                                <input type="text" class="col-xs-12 col-sm-12" ng-model="ConflictInfo.NewProblem" /></td>
+                                            <td><input type="checkbox" ng-model="ConflictInfo.Visible" ng-true-value="yes" ng-false-value="no" value="1"  /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </script>
+                <conflict-list></conflict-list>
+                <div class="row" ng-hide="ConflictInfoList.length<=0">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h4 class="smaller">系统改进内容
+                            </h4>
+                            <span class="widget-toolbar">
+                                <a href="" ng-click="SaveCurrentProblemDes()">
+                                    <i class="icon-save"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <form class="form-horizontal" id="validation-form" role="form">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">系统改进的替代问题</label>
+
+                                        <div class="col-sm-9">
+                                            <div class="clearfix">
+                                                <textarea id="AltinativeProblem" name="AltinativeProblem" data-ng-model="data.AltinativeProblem" cols="100" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">系统改进的技术冲突</label>
+
+                                        <div class="col-sm-9">
+                                            <div class="clearfix">
+                                                <textarea id="TechConflict" name="TechConflict" data-ng-model="data.TechConflict" cols="100" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">系统改进的物理冲突</label>
+
+                                        <div class="col-sm-9">
+                                            <div class="clearfix">
+                                                <textarea id="PhyConflict" name="PhyConflict" data-ng-model="data.PhyConflict" cols="100" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clearfix form-actions">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button class="btn btn-info" type="button" ng-click="SaveCurrentProblemDes()">
+                                                <i class="icon-save bigger-110"></i>
+                                                保存
+                                            </button>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+
+                <script type='text/ng-template' id='reactMap.html'> 
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="widget-box">
+                            <div class="widget-header widget-header-flat">
+                                <h4 class="smaller">相互作用表</h4>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <div class="wrap3_graph">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </script>
+                <react-map></react-map>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-sm-6">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="modal-table" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header no-padding">
+                        <div class="table-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span class="white">&times;</span>
+                            </button>
+                            因果分析流程
+                        </div>
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <img width="100%" src="/pages/FunctionAnalyse/t.png" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer no-margin-top">
+                        <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+                            <i class="icon-remove"></i>
+                            关闭
+
+                        </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- PAGE CONTENT ENDS -->
+
+
+</div>
+<!-- /.page-content -->

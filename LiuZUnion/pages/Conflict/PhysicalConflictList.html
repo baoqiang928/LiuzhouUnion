@@ -1,0 +1,121 @@
+﻿<div class="page-content" ng-controller="ProjectCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="header smaller lighter blue">物理冲突表</h3>
+                    <p>
+                        <label style="display: inline-block; width: 60px; text-align: right;">正向特性</label>
+                        <input type="text" />
+                        <label>正向特性</label>
+                        <input type="text" />
+                    </p>
+
+                    <p>
+                        <button class="btn btn-primary" ng-click="Query()">查询</button>
+                        <button class="btn btn-primary" ui-sref="ProjectAdd">增加</button>
+                        <button class="btn btn-primary" ng-click="Delete()">删除</button>
+                    </p>
+                    <div class="table-responsive">
+                        <table id="sample-table-2" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label>
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>正向特性</th>
+                                    <th>正向特性</th>
+                                    <th>共同相关参数</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="center">
+                                        <label>
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <a href="#">空载时提供张紧力</a>
+                                    </td>
+                                    <td>重载时取消张紧力</td>
+                                    <td>导向机构与滚筒间钢丝绳的张紧力</td>
+                                    <td>
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+
+                                            <a class="green" href="#">
+                                                <i class="icon-pencil bigger-130"></i>
+                                            </a>
+
+                                            <a class="red" href="#">
+                                                <i class="icon-trash bigger-130"></i>
+                                            </a>
+
+                                            <a class="red" href="#" ui-sref="PhysicalConflictResolveList">
+                                                <i class="icon-legal bigger-130"></i>
+                                            </a>
+
+
+                                        </div>
+
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label>
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <a href="#">空载时提供张紧力</a>
+                                    </td>
+                                    <td>重载时取消张紧力</td>
+                                    <td>导向机构与滚筒间钢丝绳的张紧力</td>
+                                    <td>
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+
+                                            <a class="green" href="#">
+                                                <i class="icon-pencil bigger-130"></i>
+                                            </a>
+
+                                            <a class="red" href="#">
+                                                <i class="icon-trash bigger-130"></i>
+                                            </a>
+
+                                            <a class="red" href="#" ui-sref="PhysicalConflictResolveList">
+                                                <i class="icon-legal bigger-130"></i>
+                                            </a>
+
+
+                                        </div>
+
+                                        
+                                    </td>
+                                </tr>
+                               
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+
+<!-- inline scripts related to this page -->
+

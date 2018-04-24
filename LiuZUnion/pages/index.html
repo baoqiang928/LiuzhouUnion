@@ -1,0 +1,566 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Triz</title>
+    <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
+    <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="\assets\js\jquery-2.0.3.min.js"></script>
+    <script src="\assets\js\jquery.validate.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="../Controllers/tm.pagination.js"></script>
+    <script type="text/javascript" src="angular-ueditor-master/dist/angular-ueditor.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/d3.v3.min.js"></script>
+    <!-- tree -->
+    <script src="/pages/FunctionAnalyse/t/ui-bootstrap-tpls.js"></script>
+    <script src="/pages/FunctionAnalyse/t/main.js"></script>
+    <script src="/pages/FunctionAnalyse/t/handleCtrl.js"></script>
+    <script src="/pages/FunctionAnalyse/t/nodeCtrl.js"></script>
+    <script src="/pages/FunctionAnalyse/t/nodesCtrl.js"></script>
+    <script src="/pages/FunctionAnalyse/t/treeCtrl.js"></script>
+    <script src="/pages/FunctionAnalyse/t/uiTree.js"></script>
+    <script src="/pages/FunctionAnalyse/t/uiTreeHandle.js"></script>
+    <script src="/pages/FunctionAnalyse/t/uiTreeNode.js"></script>
+    <script src="/pages/FunctionAnalyse/t/uiTreeNodes.js"></script>
+    <script src="/pages/FunctionAnalyse/t/helper.js"></script>
+    <!-- tree end -->
+
+    <script src="../Controllers/App.js?v=2"></script>
+    <script src="Angularjs/constant/constant.js"></script>
+    <script src="../Controllers/MasterCtrl.js"></script>
+    <script src="../Controllers/tb.js"></script>
+    <script src="../Controllers/DataPicker.js"></script>
+    <script src="../Controllers/Tree.js"></script>
+    <script src="../Controllers/Project.js"></script>
+    <script src="../Controllers/ProjectOpeCtrl.js"></script>
+    <script src="../Controllers/User.js"></script>
+    <script src="../Controllers/UserOpeCtrl.js"></script>
+    <script src="../Controllers/AnalysisProcedure/AnalysisProcedure.js"></script>
+    <script src="../Controllers/AnalysisProcedure/AnalysisProcedureOpeCtrl.js"></script>
+    <script src="../Controllers/QuestionDescriptionOpeCtrl.js"></script>
+    <script src="../Controllers/QuestionAnalyseOpeCtrl.js"></script>
+    <script src="../Controllers/FunctionAnalyseCtrl.js"></script>
+    <script src="../Controllers/CauseEffectCtrl.js"></script>
+    <script src="../Controllers/CauseEffect/currentProblem.js"></script>
+    <script src="../Controllers/CauseEffect/primaryComponentParam.js"></script>
+    <script src="../Controllers/CauseEffect/componentRel.js"></script>
+    <script src="../Controllers/CauseEffect/conflictList.js?v=1"></script>
+    <script src="../Controllers/CauseEffect/reactMap.js"></script>
+    <script src="../Controllers/StandardSolution/magicField.js"></script>
+    <script src="../Controllers/Solution/StandardSolution.js"></script>
+    <script src="../Controllers/Solution/StandardSolutionOpeCtrl.js"></script>
+    <script src="../Controllers/AnalysisProcedure/MaterialFieldModelCtrl.js"></script>
+    <script src="../Controllers/AnalysisProcedure/MaterialFieldModelMapCtrl.js"></script>
+    <script src="../Controllers/ConflictResolve/ConflictResolveCtrl.js"></script>
+    <script src="../Controllers/ConflictResolve/TechnicalConflictCtrl.js"></script>
+    <script src="../Controllers/ConflictResolve/PhysicalConflictCtrl.js"></script>
+    <script src="../Controllers/ConflictResolve/ConflictResolveOpeCtrl.js?v=1"></script>
+    <script src="../Controllers/ConflictResolve/TechConflictResolveOpeCtrl.js?v=1"></script>
+    <script src="../Controllers/ConflictResolve/PhyConflictResolveOpeCtrl.js?v=1"></script>
+    <script src="../Controllers/DictionaryTree/DictionaryTreeCtrl.js"></script>
+    <script src="../Controllers/DictionaryTree/DictionaryBigTreeCtrl.js?v=1"></script>
+    <script src="../Controllers/TechEvolve/DictionaryBigTreeCheckboxCtrl.js?v=1"></script>
+    <script src="../Controllers/DictionaryTree/DicInfoOpeCtrl.js?v=1"></script>
+    <script src="../Controllers/TechEvolve/TechEvolveCtrl.js"></script>
+    <script src="../Controllers/TechEvolve/TechEvolveOpeCtrl.js?v=1"></script>
+    <script src="../Controllers/TechEvolve/TechEvolveRadorCtrl.js?v=1"></script>
+    <script src="../Controllers/SeparationPrinciple/SeparationPrincipleOpeCtrl.js?v=1"></script>
+    <script src="../Controllers/SeparationPrinciple/SeparationPrincipleListCtrl.js?v=1"></script>
+
+    <!--Editor-->
+    <script type="text/javascript" src="angular-ueditor-master/ueditor.config.js"></script>
+    <script type="text/javascript" src="angular-ueditor-master/ueditor.all.js"></script>
+    <script type="text/javascript" src="angular-ueditor-master/foundation.min.js"></script>
+    <!--Editor End-->
+    <script src="../Controllers/StandardSolution/StandardSolutionAndExamplesCtrl.js"></script>
+    <script src="../Controllers/StandardSolution/standardExamples.js"></script>
+
+    <!--<link href="/assets/css/bootstrap.min.css" rel="stylesheet" />-->
+    <!--弹出窗口跑偏了，所以注释掉了。-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="Scripts/pagination.css" />
+
+
+    <!-- tree -->
+    <link rel="stylesheet" href="/pages/AngularJs-UI-master/lib/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/pages/FunctionAnalyse/t/angular-ui-tree.css">
+    <link rel="stylesheet" href="/pages/FunctionAnalyse/t/app.css">
+    <!-- tree end -->
+
+    <!--new tree-->
+    <!--<link rel="stylesheet" href="/pages/zTree_v3/css/demo.css" type="text/css">-->
+    <link rel="stylesheet" href="/pages/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <!--new tree end-->
+
+    <!-- 力导向图 -->
+    <style>
+        .link {
+            fill: none;
+            stroke: #666;
+            stroke-width: 1.5px;
+        }
+
+        #licensing {
+            fill: green;
+        }
+
+        .link.licensing {
+            stroke: green;
+        }
+
+        .link.resolved {
+            stroke-dasharray: 0,2 1;
+        }
+
+        circle {
+            fill: #ccc;
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        text {
+            font: 12px Microsoft YaHei;
+            pointer-events: none;
+            text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+        }
+
+        .linetext {
+            font-size: 12px Microsoft YaHei;
+        }
+    </style>
+    <!-- 力导向图 End-->
+
+    <style>
+        /**
+    样式如果自己觉得黑乎乎不好看可以修改
+    **/
+        .ec_tip {
+            display: none;
+            padding: 5px;
+            position: absolute;
+            background: #555;
+            color: #fff;
+            border: 3px solid #555;
+            z-index: 9999;
+        }
+    </style>
+
+    <script>
+        //弹出提示效果
+        window.Alert = function (messages, callback) {
+            if ($(".ec_tip").length < 1) {
+                $("body").append("<div class=\"ec_tip\">" + messages + "</div>");
+            }
+            //定位居中显示
+            leftW = (document.body.clientWidth - $(".ec_tip").width()) / 2;
+            topH = (document.body.clientHeight - $(".ec_tip").height()) / 2;
+            $(".ec_tip").css("top", topH + "px").css("left", leftW + "px").fadeIn(1000);
+            //谈出效果并执行回调
+            $(".ec_tip").animate({ top: "0px", opacity: 0 }, 300, function () {
+                $(".ec_tip").remove();
+                if (callback != undefined)
+                    callback();
+            });
+        }
+    </script>
+
+    <style>
+        .page-list .pagination {
+            float: left;
+        }
+
+            .page-list .pagination span {
+                cursor: pointer;
+            }
+
+            .page-list .pagination .separate span {
+                cursor: default;
+                border-top: none;
+                border-bottom: none;
+            }
+
+                .page-list .pagination .separate span:hover {
+                    background: none;
+                }
+
+        .page-list .page-total {
+            float: left;
+            margin: 25px 20px;
+        }
+
+            .page-list .page-total input, .page-list .page-total select {
+                height: 26px;
+                border: 1px solid #ddd;
+            }
+
+            .page-list .page-total input {
+                width: 40px;
+                padding-left: 3px;
+            }
+
+            .page-list .page-total select {
+                width: 50px;
+            }
+    </style>
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="/assets\css\cyrillic.css" />
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/assets/css/ace-skins.min.css" />
+
+    <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="/assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+		<script src="/assets/js/html5shiv.js"></script>
+		<script src="/assets/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body data-ng-app="myApp" ng-controller="MasterCtrl">
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-leaf"></i>
+                        Triz
+                    </small>
+                </a>
+                <!-- /.brand -->
+            </div>
+            <!-- /.navbar-header -->
+
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="/assets/avatars/user.jpg" alt="Jason's Photo" />
+                            <span class="user-info">
+                                <small>Welcome,</small>
+                                Jason
+                            </span>
+
+                            <i class="icon-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#">
+                                    <i class="icon-cog"></i>
+                                    Settings
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon-off"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.ace-nav -->
+            </div>
+            <!-- /.navbar-header -->
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+
+            <div class="sidebar" id="sidebar">
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+                </script>
+
+                <ul class="nav nav-list">
+                    <li class="active">
+                        <a href="#" ui-sref="ProjectList">
+                            <i class="icon-dashboard"></i>
+                            <span class="menu-text">项目管理 </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" ui-sref="QuestionDescriptionAdd">
+                            <i class="icon-exclamation-sign"></i>
+                            <span class="menu-text">问题描述 </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" ui-sref="QuestionAnalyseAdd">
+                            <i class="icon-lightbulb"></i>
+                            <span class="menu-text">问题分析 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" ui-sref="FunctionAnalyseAdd">
+                            <i class="icon-eye-open"></i>
+                            <span class="menu-text">功能分析 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" ui-sref="CauseEffectAdd">
+                            <i class="icon-beaker"></i>
+                            <span class="menu-text">因果分析 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" ui-sref="AnalysisProcedureList">
+                            <i class="icon-key"></i>
+                            <span class="menu-text">标准解 </span>
+                        </a>
+                    </li>
+                    <!--                    <li>
+                        <a href="#" ui-sref="ConflictList">
+                            <i class="icon-bolt"></i>
+                            <span class="menu-text">冲突解决UI </span>
+                        </a>
+                    </li>-->
+                    <li>
+                        <a href="#" ui-sref="ConflictResolveList">
+                            <i class="icon-bolt"></i>
+                            <span class="menu-text">冲突解决 </span>
+                        </a>
+                    </li>
+                    <!--                    <li>
+                        <a href="#" ui-sref="EvolveList">
+                            <i class="icon-text-width"></i>
+                            <span class="menu-text">技术进化UI </span>
+                        </a>
+                    </li>-->
+                    <li>
+                        <a href="#" ui-sref="TechEvolveList">
+                            <i class="icon-text-width"></i>
+                            <span class="menu-text">技术进化 </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-desktop"></i>
+                            <span class="menu-text">字典维护 </span>
+
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="#" ui-sref="StandSolutionDictionaryTree">
+                                    <i class="icon-double-angle-right"></i>
+                                    标准解维护
+									</a>
+                            </li>
+                            <li>
+                                <a href="#" ui-sref="TechConflictResolveDictionaryBigTree">
+                                    <i class="icon-double-angle-right"></i>
+                                    发明原理与案例
+									</a>
+                            </li>
+                            <!--                            <li>
+                                <a href="#" ui-sref="TechConflictResolveDictionaryTree">
+                                    <i class="icon-double-angle-right"></i>
+                                    发明原理与案例
+									</a>
+                            </li>-->
+
+                            <li>
+                                <a href="#" ui-sref="SeparationPrincipleDictionaryTree">
+                                    <i class="icon-double-angle-right"></i>
+                                    分离原理与案例
+									</a>
+                            </li>
+
+                            <li>
+                                <a href="#" ui-sref="TechEvolveDictionaryTree">
+                                    <i class="icon-double-angle-right"></i>
+                                    技术进化模式
+									</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-desktop"></i>
+                            <span class="menu-text">系统管理 </span>
+
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="#" ui-sref="UserList">
+                                    <i class="icon-double-angle-right"></i>
+                                    用户管理
+									</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.nav-list -->
+
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                </div>
+
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+                </script>
+            </div>
+
+            <div class="main-content">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <script type="text/javascript">
+                        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+                    </script>
+
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="icon-home home-icon"></i>
+                            <a href="#">当前项目</a>
+                        </li>
+                        <li class="active">{{CurrentProjectName}}</li>
+                    </ul>
+                    <!-- .breadcrumb -->
+
+                    <!-- #nav-search -->
+                </div>
+
+                <!-- PAGE CONTENT BEGINS -->
+                <div data-ui-view=""></div>
+                <!-- PAGE CONTENT ENDS -->
+                <!-- /.col -->
+                <!-- /.row -->
+                <!-- /.page-content -->
+            </div>
+            <!-- /.main-content -->
+
+            <!-- /#ace-settings-container -->
+        </div>
+        <!-- /.main-container-inner -->
+
+    </div>
+    <!-- /.main-container -->
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script src="\assets\js\jquery-1.10.2.min.js"></script>
+<![endif]-->
+
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='/assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/typeahead-bs2.min.js"></script>
+
+    <!-- page specific plugin scripts -->
+    <script src="/assets/js/jquery.nestable.min.js"></script>
+
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/jquery.dataTables.bootstrap.js"></script>
+
+
+    <!--fuelux.tree-->
+    <!--<script src="/assets/js/fuelux/data/fuelux.tree-sampledata.js"></script>-->
+    <script src="/assets/js/fuelux/fuelux.tree.min.js"></script>
+
+    <!--zTree_v3-->
+    <script type="text/javascript" src="/pages/zTree_v3/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="/pages/zTree_v3/js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="/pages/zTree_v3/js/jquery.ztree.exedit.js"></script>
+    <script type="text/javascript" src="/pages/zTree_v3/js/jquery.ztree.exhide.js"></script>
+
+    <!-- ace scripts -->
+
+    <script src="/assets/js/ace-elements.min.js"></script>
+    <script src="/assets/js/ace.min.js"></script>
+
+    <script src="/assets/js/bootbox.min.js"></script>
+
+    <script src="/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+    <!-- inline scripts related to this page -->
+
+    <script src="../Controllers/DrawUtil.js"></script>
+
+    <!--echart-->
+    <script type="text/javascript" src="echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="echarts/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="echarts/ecStat.min.js"></script>
+    <script type="text/javascript" src="echarts/dataTool.min.js"></script>
+    <script type="text/javascript" src="echarts/china.js"></script>
+    <script type="text/javascript" src="echarts/world.js"></script>
+    <script type="text/javascript" src="echarts/bmap.min.js"></script>
+    <script type="text/javascript" src="echarts/simplex.js"></script>
+    <!--echart end-->
+</body>
+</html>

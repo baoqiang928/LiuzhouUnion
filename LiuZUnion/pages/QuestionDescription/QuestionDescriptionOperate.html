@@ -1,0 +1,152 @@
+﻿<div class="page-content" ng-controller="QuestionDescriptionOpeCtrl">
+    <div class="page-header">
+        <h1>问题描述维护
+        </h1>
+    </div>
+    <!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+
+            <form class="form-horizontal" id="validation-form" role="form">
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">问题描述 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <textarea id="Note" name="Note" data-ng-model="data.Note" cols="100" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">目标客户（群） </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <textarea id="CustomerDes" name="CustomerDes" data-ng-model="data.CustomerDes" cols="100" rows="5">使用绞车作为起吊工具，频繁进行收放的工作环境，问题起源于海洋平台在进行平台到作业船只的运输工具时，回收过程出现乱绳。</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">系统所处环境 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <textarea id="Environment" name="Environment" data-ng-model="data.Environment" cols="100" rows="5">重物进行起吊的工况下，频繁出现缆绳负载的变化。啊卡片</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">初始问题 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <textarea id="InitialProblemDes" name="InitialProblemDes" data-ng-model="data.InitialProblemDes" cols="100" rows="5">排缆器对钢缆的引导作用不足，导致空载时收排绳混乱，出现压绳乱绳现象</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">系统相关要求 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <textarea id="RelativeDemand" name="RelativeDemand" data-ng-model="data.RelativeDemand" cols="100" rows="5">绞车无论何时都能正常排绳</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">隐性问题 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <textarea id="PotentialProblem" name="PotentialProblem" data-ng-model="data.PotentialProblem" cols="100" rows="5">绞车拍缆器在空载时，绳的末端需要人 力拉紧</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">性能与需求的差距 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <textarea id="GapOfPerformanceRequirment" name="GapOfPerformanceRequirment" data-ng-model="data.GapOfPerformanceRequirment" cols="100" rows="5">现状时空载时绞车收排绳混乱，客户需求是无论何时都能保证收、放绳整齐</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">附图说明 </label>
+                    <div class="col-sm-9">
+                        <ul class="ace-thumbnails">
+
+                            <li>
+                                <a href="assets/images/gallery/image-3.jpg" data-rel="colorbox">
+                                    <img width="200px" alt="150x150" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507538326724&di=4e2927bbd85a4b161fcc55afe07c4590&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140624%2F240454-140624063T050.jpg" />
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="icon-remove red"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="assets/images/gallery/image-3.jpg" data-rel="colorbox">
+                                    <img width="200px" src="http://101.201.67.155:81/upload/201707/24/thumb_201707242250587892.png" />
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="icon-remove red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+
+                <div class="space-4"></div>
+
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button class="btn btn-info" type="button" ng-click="Save()">
+                            <i class="icon-ok bigger-110"></i>
+                            保存
+                        </button>
+                        &nbsp; &nbsp; &nbsp;
+                       
+                        <button class="btn btn-info" type="button">
+                            <i class="icon-cloud-upload bigger-110"></i>
+                            上传图片
+                       
+                        </button>
+                        &nbsp; &nbsp; &nbsp;
+                       
+                        <button class="btn btn-info" type="button">
+                            <i class="icon-cloud-download bigger-110"></i>
+                            导出文档
+                       
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- PAGE CONTENT ENDS -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
