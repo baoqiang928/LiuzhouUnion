@@ -193,6 +193,7 @@
     <Content Include="Controllers\Tree.js" />
     <Content Include="Controllers\User.js" />
     <Content Include="Controllers\UserOpeCtrl.js" />
+    <Content Include="Controllers\weixinpicture.js" />
     <Content Include="dropzone.html" />
     <Content Include="elements.html" />
     <Content Include="Enterprise\Controllers\App.js" />
