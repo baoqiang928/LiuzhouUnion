@@ -4,7 +4,7 @@ using System.Web;
 using System.IO;
 using System.Collections;
 
-namespace TrizUI.Editor
+namespace LiuZUnion.Editor
 {
     /// <summary>
     /// UEditor编辑器通用上传类

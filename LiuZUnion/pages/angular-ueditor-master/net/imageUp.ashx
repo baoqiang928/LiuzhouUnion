@@ -21,7 +21,7 @@ public class imageUp : IHttpHandler
 
         //上传图片
         Hashtable info;
-        TrizUI.Editor.Uploader up = new TrizUI.Editor.Uploader();
+        LiuZUnion.Editor.Uploader up = new LiuZUnion.Editor.Uploader();
         info = up.upFile(context, pathbase, filetype, size); //获取上传状态
         string json = BuildJson(info);
 

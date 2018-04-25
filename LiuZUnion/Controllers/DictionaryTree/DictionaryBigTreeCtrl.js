@@ -221,6 +221,7 @@
                 }
                 //展开这个节点，否则会重复增加两个。
                 var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+                console.log("zTree", zTree);
                 zTree.expandNode($scope.CurrentNode, true, null, null, true);
 
                 requestService.add("DictionaryTrees", NodeInfo).then(function (data) {

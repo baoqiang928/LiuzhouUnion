@@ -86,6 +86,6 @@ angular.module("myApp")
     ])
     // 公司行业多选数据
     .constant('APIUrl', [
-        { id: 1, url: 'localhost:2072' }
+        { id: 1, url: 'localhost:65399' }
         //{ id: 2, url: '101.201.67.155:81' }
     ]);
