@@ -1,0 +1,3 @@
+﻿E:\MyProjects\LiuZUnion\LiuZUnion\pages\angular-ueditor-master\net\config.json
+其中的：
+"imageUrlPrefix": "http://localhost:55116/pages/angular-ueditor-master/net/", /* 图片访问路径前缀 */

@@ -150,7 +150,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "/pages/TechEvolve/TechEvolveOpe.html"
         })
         .state("TechEvolveDictionaryTree", {
-            params: { "TreeTypeID": "5", "Title": "技术进化模式维护", "CurrentProjectID": "" },
+            params: { "TreeTypeID": "5", "Title": "栏目维护", "CurrentProjectID": "" },
             url: "/TechEvolveDictionaryTree",
             templateUrl: "/pages/DictionaryTree/DictionaryBigTreeOpe.html"
         })

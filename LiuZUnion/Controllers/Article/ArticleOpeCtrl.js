@@ -1,5 +1,6 @@
 angular.module("myApp")
     .controller('ArticleOpeCtrl', function ($scope, $location, requestService, $stateParams, $state) {
+        alert(2);
         $scope._simpleConfig = {
             //初始化编辑器内容  
             content: '<p>test1</p>',
@@ -23,7 +24,7 @@ angular.module("myApp")
             imagePopup: true,
             //提交到后台的数据是否包含整个html字符串  
             allHtmlEnabled: false,
-            //额外功能添加                 
+            //额外功能添加
             functions: ['map', 'insertimage', 'insertvideo', 'attachment',
             , 'insertcode', 'webapp', 'template',
             'background', 'wordimage']

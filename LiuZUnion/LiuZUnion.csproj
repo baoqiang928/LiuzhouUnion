@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="666.jpg" />
     <Content Include="assets\avatars\avatar.png" />
     <Content Include="assets\avatars\avatar1.png" />
     <Content Include="assets\avatars\avatar2.png" />
@@ -230,6 +231,7 @@
     <Content Include="obj\Debug\TrizUI.dll" />
     <Content Include="obj\Debug\TrizUI.pdb" />
     <Content Include="packages.config" />
+    <Content Include="pages\AAA富文本图片上传配置\富文本图片上传配置.txt" />
     <Content Include="pages\AnalysisProcedure\AnalysisProcedureList.html" />
     <Content Include="pages\AnalysisProcedure\AnalysisProcedureListTMP.html" />
     <Content Include="pages\AnalysisProcedure\AnalysisProcedureOperate.html" />
