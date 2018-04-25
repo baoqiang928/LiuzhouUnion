@@ -176,6 +176,8 @@
     <Content Include="Controllers\AnalysisProcedure\MaterialFieldModelCtrl.js" />
     <Content Include="Controllers\AnalysisProcedure\MaterialFieldModelMapCtrl.js" />
     <Content Include="Controllers\App.js" />
+    <Content Include="Controllers\Article\Article.js" />
+    <Content Include="Controllers\Article\ArticleOpeCtrl.js" />
     <Content Include="Controllers\CauseEffectCtrl.js" />
     <Content Include="Controllers\CauseEffect\componentRel.js" />
     <Content Include="Controllers\CauseEffect\conflictList.js" />
@@ -1024,6 +1026,8 @@
     <Content Include="pages\AngularJs-UI-master\lib\bootstrap\3.2.0\js\bootstrap.min.js" />
     <Content Include="pages\AngularJs-UI-master\src\pagination\tm.pagination.js" />
     <Content Include="pages\Angularjs\constant\constant.js" />
+    <Content Include="pages\Article\ArticleList.html" />
+    <Content Include="pages\Article\ArticleOperate.html" />
     <Content Include="pages\assets\images\rect.png" />
     <Content Include="pages\assets\images\rect2.png" />
     <Content Include="pages\assets\images\rect2big.png" />

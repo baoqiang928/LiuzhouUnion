@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticleDAL.cs" />
     <Compile Include="DictionaryTreeDAL.cs" />
     <Compile Include="LZUnionDBModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -70,6 +71,9 @@
     </Compile>
     <Compile Include="PredicateExtensionses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tbl_ArticleInfo.cs">
+      <DependentUpon>LZUnionDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_DictionaryTreeInfo.cs">
       <DependentUpon>LZUnionDBModel.tt</DependentUpon>
     </Compile>

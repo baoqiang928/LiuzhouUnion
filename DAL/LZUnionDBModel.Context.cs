@@ -26,5 +26,6 @@ namespace DAL
         }
     
         public virtual DbSet<tbl_DictionaryTreeInfo> tbl_DictionaryTreeInfo { get; set; }
+        public virtual DbSet<tbl_ArticleInfo> tbl_ArticleInfo { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Triz</title>
+    <title>柳州市直机关工会</title>
     <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
     <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,8 +66,8 @@
     <script src="../Controllers/TechEvolve/TechEvolveCtrl.js"></script>
     <script src="../Controllers/TechEvolve/TechEvolveOpeCtrl.js?v=1"></script>
     <script src="../Controllers/TechEvolve/TechEvolveRadorCtrl.js?v=1"></script>
-    <script src="../Controllers/SeparationPrinciple/SeparationPrincipleOpeCtrl.js?v=1"></script>
-    <script src="../Controllers/SeparationPrinciple/SeparationPrincipleListCtrl.js?v=1"></script>
+    <script src="../Controllers/Article/Article.js?v=1"></script>
+    <script src="../Controllers/Article/ArticleOpeCtrl.js?v=1"></script>
 
     <!--Editor-->
     <script type="text/javascript" src="angular-ueditor-master/ueditor.config.js"></script>
@@ -249,7 +249,7 @@
                 <a href="#" class="navbar-brand">
                     <small>
                         <i class="icon-leaf"></i>
-                        Triz
+                        柳州市直机关工会
                     </small>
                 </a>
                 <!-- /.brand -->
@@ -320,67 +320,38 @@
 
                 <ul class="nav nav-list">
                     <li class="active">
-                        <a href="#" ui-sref="ProjectList">
+                        <a href="#" ui-sref="Article">
                             <i class="icon-dashboard"></i>
-                            <span class="menu-text">项目管理 </span>
+                            <span class="menu-text">文章管理 </span>
                         </a>
                     </li>
 
                     <li>
                         <a href="#" ui-sref="QuestionDescriptionAdd">
                             <i class="icon-exclamation-sign"></i>
-                            <span class="menu-text">问题描述 </span>
+                            <span class="menu-text">机关职工管理 </span>
                         </a>
                     </li>
 
                     <li>
                         <a href="#" ui-sref="QuestionAnalyseAdd">
                             <i class="icon-lightbulb"></i>
-                            <span class="menu-text">问题分析 </span>
+                            <span class="menu-text">商家管理 </span>
                         </a>
                     </li>
                     <li>
                         <a href="#" ui-sref="FunctionAnalyseAdd">
                             <i class="icon-eye-open"></i>
-                            <span class="menu-text">功能分析 </span>
+                            <span class="menu-text">留言管理 </span>
                         </a>
                     </li>
                     <li>
                         <a href="#" ui-sref="CauseEffectAdd">
                             <i class="icon-beaker"></i>
-                            <span class="menu-text">因果分析 </span>
+                            <span class="menu-text">智能提醒 </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" ui-sref="AnalysisProcedureList">
-                            <i class="icon-key"></i>
-                            <span class="menu-text">标准解 </span>
-                        </a>
-                    </li>
-                    <!--                    <li>
-                        <a href="#" ui-sref="ConflictList">
-                            <i class="icon-bolt"></i>
-                            <span class="menu-text">冲突解决UI </span>
-                        </a>
-                    </li>-->
-                    <li>
-                        <a href="#" ui-sref="ConflictResolveList">
-                            <i class="icon-bolt"></i>
-                            <span class="menu-text">冲突解决 </span>
-                        </a>
-                    </li>
-                    <!--                    <li>
-                        <a href="#" ui-sref="EvolveList">
-                            <i class="icon-text-width"></i>
-                            <span class="menu-text">技术进化UI </span>
-                        </a>
-                    </li>-->
-                    <li>
-                        <a href="#" ui-sref="TechEvolveList">
-                            <i class="icon-text-width"></i>
-                            <span class="menu-text">技术进化 </span>
-                        </a>
-                    </li>
+
 
                     <li>
                         <a href="#" class="dropdown-toggle">
@@ -391,36 +362,11 @@
                         </a>
 
                         <ul class="submenu">
-                            <li>
-                                <a href="#" ui-sref="StandSolutionDictionaryTree">
-                                    <i class="icon-double-angle-right"></i>
-                                    标准解维护
-									</a>
-                            </li>
-                            <li>
-                                <a href="#" ui-sref="TechConflictResolveDictionaryBigTree">
-                                    <i class="icon-double-angle-right"></i>
-                                    发明原理与案例
-									</a>
-                            </li>
-                            <!--                            <li>
-                                <a href="#" ui-sref="TechConflictResolveDictionaryTree">
-                                    <i class="icon-double-angle-right"></i>
-                                    发明原理与案例
-									</a>
-                            </li>-->
-
-                            <li>
-                                <a href="#" ui-sref="SeparationPrincipleDictionaryTree">
-                                    <i class="icon-double-angle-right"></i>
-                                    分离原理与案例
-									</a>
-                            </li>
 
                             <li>
                                 <a href="#" ui-sref="TechEvolveDictionaryTree">
                                     <i class="icon-double-angle-right"></i>
-                                    技术进化模式
+                                    栏目管理
 									</a>
                             </li>
                         </ul>
@@ -440,7 +386,18 @@
                                     用户管理
 									</a>
                             </li>
-
+                            <li>
+                                <a href="#" ui-sref="UserList">
+                                    <i class="icon-double-angle-right"></i>
+                                    权限管理
+									</a>
+                            </li>
+                            <li>
+                                <a href="#" ui-sref="UserList">
+                                    <i class="icon-double-angle-right"></i>
+                                    授权管理
+									</a>
+                            </li>
 
                         </ul>
                     </li>
@@ -457,22 +414,7 @@
             </div>
 
             <div class="main-content">
-                <div class="breadcrumbs" id="breadcrumbs">
-                    <script type="text/javascript">
-                        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
-                    </script>
 
-                    <ul class="breadcrumb">
-                        <li>
-                            <i class="icon-home home-icon"></i>
-                            <a href="#">当前项目</a>
-                        </li>
-                        <li class="active">{{CurrentProjectName}}</li>
-                    </ul>
-                    <!-- .breadcrumb -->
-
-                    <!-- #nav-search -->
-                </div>
 
                 <!-- PAGE CONTENT BEGINS -->
                 <div data-ui-view=""></div>

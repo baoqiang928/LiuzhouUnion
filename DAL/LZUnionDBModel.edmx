@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LZUnionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LZUnionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_ArticleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DicID" Type="int" Nullable="false" />
+          <Property Name="SerialNum" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="tbl_DictionaryTreeInfo">
           <Key>
             <PropertyRef Name="ID" />
@@ -21,10 +33,10 @@
           <Property Name="CreateDateTime" Type="datetime" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityContainer Name="LZUnionDBModelStoreContainer">
+          <EntitySet Name="tbl_ArticleInfo" EntityType="Self.tbl_ArticleInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_DictionaryTreeInfo" EntityType="Self.tbl_DictionaryTreeInfo" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LZUnionDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -45,7 +57,20 @@
         </EntityType>
         <EntityContainer Name="LZUnionDBEntitiesConn" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_DictionaryTreeInfo" EntityType="Self.tbl_DictionaryTreeInfo" />
+          <EntitySet Name="tbl_ArticleInfo" EntityType="LZUnionDBModel.tbl_ArticleInfo" />
         </EntityContainer>
+        <EntityType Name="tbl_ArticleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DicID" Type="Int32" Nullable="false" />
+          <Property Name="SerialNum" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -65,6 +90,19 @@
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="FatherID" ColumnName="FatherID" />
                 <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ArticleInfo">
+            <EntityTypeMapping TypeName="LZUnionDBModel.tbl_ArticleInfo">
+              <MappingFragment StoreEntitySet="tbl_ArticleInfo">
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SerialNum" ColumnName="SerialNum" />
+                <ScalarProperty Name="DicID" ColumnName="DicID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -2,16 +2,16 @@
 myApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/ProjectList");
     $stateProvider
-        .state("ProjectList", {
-            url: "/ProjectList",
-            templateUrl: "/pages/List.html",
+        .state("Article", {
+            url: "/Article",
+            templateUrl: "/pages/Article/ArticleList.html",
             module: "tm.pagination",
             controller: "datepicker-Controller"
         })
-       .state("ProjectAdd", {
+       .state("ArticleAdd", {
            params: { "ID": null },
-           url: "/ProjectAdd",
-           templateUrl: "/pages/Project/ProjectOperate.html"
+           url: "/ArticleAdd",
+           templateUrl: "/pages/Article/ArticleOperate.html"
        })
         .state("UserList", {
             url: "/UserList",
