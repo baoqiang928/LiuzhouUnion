@@ -182,6 +182,7 @@
     <Content Include="Controllers\DictionaryTree\DictionaryTreeCtrl.js" />
     <Content Include="Controllers\DrawUtil.js" />
     <Content Include="Controllers\FunctionAnalyseCtrl.js" />
+    <Content Include="Controllers\JavaScript.js" />
     <Content Include="Controllers\MasterCtrl.js" />
     <Content Include="Controllers\Project.js" />
     <Content Include="Controllers\ProjectOpeCtrl.js" />
@@ -1549,6 +1550,7 @@
     <Content Include="pages\FunctionAnalyse\views\nodrop.html" />
     <Content Include="pages\FunctionAnalyse\views\table-example.html" />
     <Content Include="pages\HtmlPage1.html" />
+    <Content Include="pages\HtmlPage2.html" />
     <Content Include="pages\index.html" />
     <Content Include="pages\List.html" />
     <Content Include="pages\Main.html" />

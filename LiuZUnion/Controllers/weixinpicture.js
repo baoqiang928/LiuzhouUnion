@@ -2,8 +2,7 @@
  * @author Cai
  */
 
-UE.plugins.wximage = 
-function() {
+UE.plugin.register('wximage', function (){
     
     var u = baidu;
     var a = this
@@ -91,5 +90,4 @@ function() {
     }
     );
     
-}
-;
+});
