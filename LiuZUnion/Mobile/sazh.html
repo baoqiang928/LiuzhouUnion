@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <script nonce="" type="text/javascript">
+        window.logs = {
+            pagetime: {}
+        };
+        window.logs.pagetime['html_begin'] = (+new Date());
+        </script>
+
+    <link rel="dns-prefetch" href="https://res.wx.qq.com/">
+    <link rel="dns-prefetch" href="https://mmbiz.qpic.cn/">
+    <link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/favicon22c41b.ico">
+    <script nonce="" type="text/javascript">
+        String.prototype.html = function (encode) {
+            var replace = ["&#39;", "'", "&quot;", '"', "&nbsp;", " ", "&gt;", ">", "&lt;", "<", "&amp;", "&", "&yen;", "¥"];
+            if (encode) {
+                replace.reverse();
+            }
+            for (var i = 0, str = this; i < replace.length; i += 2) {
+                str = str.replace(new RegExp(replace[i], 'g'), replace[i + 1]);
+            }
+            return str;
+        };
+
+        window.isInWeixinApp = function () {
+            return /MicroMessenger/.test(navigator.userAgent);
+        };
+
+        window.getQueryFromURL = function (url) {
+            url = url || 'http://qq.com/s?a=b#rd';
+            var tmp = url.split('?'),
+                query = (tmp[1] || "").split('#')[0].split('&'),
+                params = {};
+            for (var i = 0; i < query.length; i++) {
+                var arg = query[i].split('=');
+                params[arg[0]] = arg[1];
+            }
+            if (params['pass_ticket']) {
+                params['pass_ticket'] = encodeURIComponent(params['pass_ticket'].html(false).html(false).replace(/\s/g, "+"));
+            }
+            return params;
+        };
+
+        (function () {
+            var params = getQueryFromURL(location.href);
+            window.uin = params['uin'] || "" || '';
+            window.key = params['key'] || "" || '';
+            window.wxtoken = params['wxtoken'] || '';
+            window.pass_ticket = params['pass_ticket'] || '';
+            window.appmsg_token = "";
+        })();
+
+        function wx_loaderror() {
+            if (location.pathname === '/bizmall/reward') {
+                new Image().src = '/mp/jsreport?key=96&content=reward_res_load_err&r=' + Math.random();
+            }
+        }
+
+</script>
+
+    <script nonce="" type="text/javascript">
+        window.no_moon_ls = 0;
+    </script>
+    <title>深圳工会</title>
+
+    <link onerror="wx_loaderror(this)" rel="stylesheet" href="./sazh_files/index23b0e8.css">
+
+    <style type="text/css">
+        .slider {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .swiper {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .swiper .item {
+                float: left;
+                position: relative;
+            }
+
+                .swiper .item a {
+                    display: block;
+                }
+
+                .swiper .item .img {
+                    display: block;
+                    width: 100%;
+                    height: 180px;
+                    background: center center no-repeat;
+                    background-size: cover;
+                }
+
+                .swiper .item .desc {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 1.4em;
+                    font-size: 16px;
+                    padding: 20px 50px 12px 13px;
+                    background-image: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.7) 100%);
+                    background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.7) 100%);
+                    color: #fff;
+                    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    word-wrap: normal;
+                }
+
+        .indicator {
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+        }
+
+            .indicator a {
+                float: left;
+                margin-left: 6px;
+            }
+
+        .icon_dot {
+            display: inline-block;
+            vertical-align: middle;
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: #d0cdd1;
+        }
+
+            .icon_dot.active {
+                background-color: #6a666f;
+            }
+    </style>
+    <style type="text/css">
+        .tab_hd {
+            height: 44px;
+        }
+
+        .tab_hd_inner {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            font-size: 0;
+            background-color: #f2f2f2;
+        }
+
+            .tab_hd_inner .item {
+                height: 44px;
+                line-height: 44px;
+                width: 100%;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                box-flex: 1;
+                flex: 1;
+                font-size: 15px;
+                color: #000;
+                text-align: center;
+                text-decoration: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+                .tab_hd_inner .item.active {
+                    color: #21b100;
+                }
+
+                .tab_hd_inner .item:active {
+                    background-color: rgba(0,0,0,.1);
+                }
+
+        .article_list {
+            background-color: #fff;
+        }
+
+        .list_item {
+            display: block;
+            padding: 15px 15px 10px 10px;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+            .list_item:active {
+                background-color: rgba(0,0,0,.1);
+            }
+
+            .list_item:after {
+                content: " ";
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px solid #e2e2e2;
+                -webkit-transform-origin: 0 100%;
+                -ms-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+                -webkit-transform: scaleY(.5);
+                -ms-transform: scaleY(.5);
+                transform: scaleY(.5);
+                left: 10px;
+            }
+
+            .list_item:last-child:after {
+                border: 0;
+            }
+
+            .list_item .cover {
+                float: left;
+                margin-right: 10px;
+            }
+
+                .list_item .cover .img {
+                    display: block;
+                    width: 80px;
+                    height: 60px;
+                }
+
+            .list_item .cont {
+                overflow: hidden;
+            }
+
+                .list_item .cont .title {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #000;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    word-wrap: normal;
+                }
+
+                .list_item .cont .desc {
+                    font-size: 13px;
+                    color: #999;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    line-height: 1.3;
+                }
+
+        .more {
+            text-align: center;
+        }
+
+        .list-loading {
+            text-align: center;
+            color: #888;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body id="" class="zh_CN ">
+
+    <script>
+
+        var benchmark = {
+            mark: function (key) {
+                benchmark[key] = (+new Date());
+            },
+            pageBegin: 0,
+            pageEnd: 0,
+            cssEnd: 0,
+            jsEnd: 0,
+            moonJsEnd: 0,
+            soonJsEnd: 0
+        };
+        var appmsg_token = "";
+        benchmark.mark('pageBegin');
+</script>
+    <div class="container">
+        <div id="js_plugins_loading" class="loading" style="display: none;">
+            加载中   
+        </div>
+        <div id="js_plugins" style="visibility: visible;">
+            <div class="slider js_plugin" id="namespace_0" data-pid="1">
+                <div class="swiper" style="height: 180px; width: 3807px;">
+
+                    <div class="item js_post" style="width: 1269px; height: 180px;">
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650060212&amp;idx=1&amp;sn=9b65e313cc793dcc9d71038e7ed614ab&amp;scene=19#wechat_redirect">
+                            <div class="img js_img" style="background-image: url(&#39;http://mmbiz.qpic.cn/mmbiz_jpg/QiblmlVAO6IMhhclpRic7tXhzgjstyQ2tIQicUEcZM0dcFAjDZ6NNMuDGHpjic2FI7B2e8E8RsBA8S8UJtkfBVmic1Q/0&#39;);"></div>
+                            <p class="desc js_title">这件事我们做了三年，最大的心得是……</p>
+                        </a>
+                    </div>
+
+                    <div class="item js_post" style="width: 1269px; height: 180px;">
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650057919&amp;idx=1&amp;sn=3b9ecdfdc5e9937e5327a44912b94212&amp;scene=19#wechat_redirect">
+                            <div class="img js_img" style="background-image: url(&#39;http://mmbiz.qpic.cn/mmbiz/QiblmlVAO6IPyERGtuHxvHtQoZOuuz7fqAb9lPqJ1ovxO2h1KpVMFibtklc9Yyicts5W8gPvdmqHicAyN8uF8Jz3cw/0&#39;);"></div>
+                            <p class="desc js_title">想申请工会法律援助？职工来这里就对了！</p>
+                        </a>
+                    </div>
+
+                    <div class="item js_post" style="width: 1269px; height: 180px;">
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=205221887&amp;idx=1&amp;sn=ff37c4aae694e591558afb3cc6077b6d&amp;scene=19#wechat_redirect">
+                            <div class="img js_img" style="background-image: url(&#39;http://mmbiz.qpic.cn/mmbiz/QiblmlVAO6IO1S7DZtsMZ9Il0iafeRjjiaC34dskQPNkDjUZIbwd8WLao0OCeMfmhXGGvKksH7SHHx9PgddVwNClg/640&#39;);"></div>
+                            <p class="desc js_title">一张图读懂深圳工会</p>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="indicator">
+
+                    <a href="javascript:;"><i class="icon_dot active"></i></a>
+
+                    <a href="javascript:;"><i class="icon_dot "></i></a>
+
+                    <a href="javascript:;"><i class="icon_dot "></i></a>
+
+                </div>
+            </div>
+            <div class="tab js_plugin" id="namespace_1" data-pid="2">
+                <div class="tab_hd">
+                    <div class="tab_hd_inner">
+
+                        <div type="index" data-index="0" class="item active">走进深工</div>
+
+                        <div type="index" data-index="1" class="item ">各区动态</div>
+
+                        <div type="index" data-index="2" class="item ">试验区</div>
+
+                        <div type="index" data-index="3" class="item ">工会百科</div>
+
+                        <div type="index" data-index="4" class="item ">特别策划</div>
+
+                    </div>
+                </div>
+                <div class="tab_bd">
+
+                    <div class="article_list article_list_0">
+
+                        <a class="list_item js_post" href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650060479&amp;idx=1&amp;sn=eee17f3af3b0f6e1144cf3090752f40b&amp;scene=19#wechat_redirect">
+                            <div class="cover">
+                                <img class="img js_img" src="./sazh_files/0" alt="">
+                            </div>
+                            <div class="cont">
+                                <h2 class="title js_title">工会+法院？打官司将会更便捷！</h2>
+                                <p class="desc">产生劳动争议去法院，打官司太慢？现在有更便捷的解决办法啦！</p>
+                            </div>
+                        </a>
+
+                        <a class="list_item js_post" href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650059385&amp;idx=1&amp;sn=5d93dfa0a14eb420d0b86405281719a3&amp;scene=19#wechat_redirect">
+                            <div class="cover">
+                                <img class="img js_img" src="./sazh_files/0(1)" alt="">
+                            </div>
+                            <div class="cont">
+                                <h2 class="title js_title">来深务工者可以在深圳退休了？YES！从此不必“告老还乡”！</h2>
+                                <p class="desc">随着社保体系的逐渐完善，来深务工者也可以在深圳退休享受深圳的养老待遇啦~</p>
+                            </div>
+                        </a>
+
+                        <a class="list_item js_post" href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650058933&amp;idx=1&amp;sn=bebe42d072a6d75a35769618f9541e6d&amp;scene=19#wechat_redirect">
+                            <div class="cover">
+                                <img class="img js_img" src="./sazh_files/0(2)" alt="">
+                            </div>
+                            <div class="cont">
+                                <h2 class="title js_title">超七成女性“工粉”遭遇过职场歧视！除了吐槽我们还能做什么？（附电影票获赠名单）</h2>
+                                <p class="desc">超七成“工粉”遭遇过生育歧视、招聘岗位限制、同工不同酬等职场隐形性别歧视！遇到这种情况，我们应该怎么办？</p>
+                            </div>
+                        </a>
+
+                        <a class="list_item js_post" href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650058892&amp;idx=4&amp;sn=b5eeabdbd731636544c9865cfac46d8f&amp;scene=19#wechat_redirect">
+                            <div class="cover">
+                                <img class="img js_img" src="./sazh_files/0(3)" alt="">
+                            </div>
+                            <div class="cont">
+                                <h2 class="title js_title">下班就关机！你敢把这条晒在朋友圈吗？</h2>
+                                <p class="desc">你是否也遇到过，在非工作时间被老板临时指派任务的情况？</p>
+                            </div>
+                        </a>
+
+                        <a class="list_item js_post" href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650058374&amp;idx=1&amp;sn=21ad5f720fba83763bea59360ea18fef&amp;scene=19#wechat_redirect">
+                            <div class="cover">
+                                <img class="img js_img" src="./sazh_files/0(4)" alt="">
+                            </div>
+                            <div class="cont">
+                                <h2 class="title js_title">让“深圳经验”在全省开花结果！</h2>
+                                <p class="desc">神舟十一号飞船昨天成功发射，咱们“深圳工会”号飞船啥时候发射呀？飞船里搭载了什么呀？为啥要向全省发射呀？“深工经验”是啥呀？</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="article_list article_list_1" style="display: none;">
+                    </div>
+
+                    <div class="article_list article_list_2" style="display: none;">
+                    </div>
+
+                    <div class="article_list article_list_3" style="display: none;">
+                    </div>
+
+                    <div class="article_list article_list_4" style="display: none;">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script nonce="">
+        var __DEBUGINFO = {
+            debug_js: "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/debug/console34c264.js",
+            safe_js: "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/safe/moonsafe34c264.js",
+            res_list: []
+        };
+</script>
+
+    <script nonce="" type="text/javascript">
+        (function () {
+            var totalCount = 0,
+                    finishCount = 0;
+
+            function _loadVConsolePlugin() {
+                window.vConsole = new window.VConsole();
+                while (window.vConsolePlugins.length > 0) {
+                    var p = window.vConsolePlugins.shift();
+                    window.vConsole.addPlugin(p);
+                }
+            }
+
+            function _addVConsole(uri, cb) {
+                totalCount++;
+                var url = '//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/' + uri;
+                var node = document.createElement('SCRIPT');
+                node.type = 'text/javascript';
+                node.src = url;
+                node.setAttribute('nonce', '');
+                if (cb) {
+                    node.onload = cb;
+                }
+                document.getElementsByTagName('head')[0].appendChild(node);
+            }
+            if (
+                (document.cookie && document.cookie.indexOf('vconsole_open=1') > -1)
+                || location.href.indexOf('vconsole=1') > -1
+            ) {
+                window.vConsolePlugins = [];
+                _addVConsole('3.0.0/vconsole.min.js', function () {
+
+                    _addVConsole('plugin/vconsole-mpopt/1.0.1/vconsole-mpopt.js', _loadVConsolePlugin);
+                });
+            }
+        })();
+</script>
+
+    <script>window.__moon_host = 'res.wx.qq.com'; window.moon_map = { "biz_common/utils/report.js": "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/report3518c6.js", "homepage/report.js": "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/homepage/report243273.js", "biz_wap/zepto/event.js": "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/zepto/event34c264.js", "biz_wap/zepto/ajax.js": "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/zepto/ajax37cd31.js", "biz_wap/zepto/zepto.js": "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/zepto/zepto34c264.js", "homepage/index.js": "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/homepage/index2e7b74.js" };</script>
+    <script>
+        var cgiData = {
+            biz: 'MzAwNjI2ODE4Nw==',
+            hid: '1',
+            pagename: '深圳工会',
+            comboList: {
+                'js': '/hp/hp_1_7.js,/hp/hp_2_10.js',
+                'css.js': '/hp/hp_1_7.css.js,/hp/hp_2_10.css.js'
+            },
+            biz_info: {
+                nickname: "深圳工会"
+            }
+        };
+</script>
+    <script>
+        var soonBaseURL = location.protocol + '//' + window.location.host,
+            soonMap = {
+                'js': [],
+                'css.js': []
+            };
+
+
+
+
+        for (var k in cgiData.comboList) {
+            soonMap[k] = cgiData.comboList[k].split(',');
+        }
+
+
+        function soonDefineCallback(fileType) {
+            if (fileType == 'css.js') {
+                if (seajs.requiredNum['css.js'] >= Object.keys(soon.map['css.js']).length) {
+                    benchmark.mark('cssEnd');
+                }
+            } else if (fileType == 'js' || fileType == 'moon.js') {
+                if (fileType == 'js' && seajs.requiredNum['js'] >= Object.keys(soon.map['js']).length) {
+                    benchmark.mark('soonJsEnd');
+                }
+                if (fileType == 'moon.js' && seajs.requiredNum['moon.js'] >= Object.keys(soon.map['moon.js']).length) {
+                    benchmark.mark('moonJsEnd');
+                }
+                if (seajs.requiredNum['js'] + seajs.requiredNum['moon.js'] >= Object.keys(soon.map['js']).length + Object.keys(soon.map['moon.js']).length) {
+                    benchmark.mark('jsEnd');
+                }
+            }
+            if (seajs.requiredNum['css.js'] >= Object.keys(soon.map['css.js']).length && seajs.requiredNum['js'] >= Object.keys(soon.map['js']).length && seajs.requiredNum['moon.js'] >= Object.keys(soon.map['moon.js']).length) {
+
+
+                document.getElementById('js_plugins_loading').style.display = "none";
+                document.getElementById('js_plugins').style.visibility = "visible";
+            }
+        }
+
+        benchmark.mark('soonJsBegin');
+</script>
+
+    <script onerror="wx_loaderror(this)" type="text/javascript" src="./sazh_files/soon322696.js"></script>
+    <script>
+        seajs.use('homepage/index.js');
+        benchmark.mark('pageEnd');
+</script>
+
+
+    <script nonce="" type="text/javascript">document.addEventListener("touchstart", function () { }, false);</script>
+
+    <!--tailTrap<body></body><head></head><html></html>-->
+
+</body>
+<style type="text/css" id="11719361552"></style>
+</html>

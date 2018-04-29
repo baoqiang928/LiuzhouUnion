@@ -225,8 +225,7 @@
     <Content Include="js\common\common.js" />
     <Content Include="js\common\zepto.js" />
     <Content Include="login.html" />
-    <Content Include="Mobile\2.html" />
-    <Content Include="Mobile\3.html" />
+    <Content Include="Mobile\sazh.html" />
     <Content Include="nestable-list.html" />
     <Content Include="obj\Debug\LiuZUnion.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\LiuZUnion.dll" />
@@ -2357,8 +2356,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Mobile\2_files\" />
-    <Folder Include="Mobile\3_files\" />
+    <Folder Include="Mobile\assets\" />
+    <Folder Include="Mobile\Controllers\" />
+    <Folder Include="Mobile\sazh_files\" />
+    <Folder Include="Mobile\webapi\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
