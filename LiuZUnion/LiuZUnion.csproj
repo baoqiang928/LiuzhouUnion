@@ -225,7 +225,26 @@
     <Content Include="js\common\common.js" />
     <Content Include="js\common\zepto.js" />
     <Content Include="login.html" />
+    <Content Include="Mobile\3.html" />
+    <Content Include="Mobile\3_files\index23b0e8.css" />
+    <Content Include="Mobile\3_files\soon322696.js" />
+    <Content Include="Mobile\assets\js\angular-sanitize.min.js" />
+    <Content Include="Mobile\assets\js\angular-ui-router.js" />
+    <Content Include="Mobile\assets\js\angular.min.js" />
+    <Content Include="Mobile\assets\js\jquery-validation-1.14.0\jquery.js" />
+    <Content Include="Mobile\assets\js\jquery-validation-1.14.0\jquery.validate.min.js" />
+    <Content Include="Mobile\assets\js\jquery-validation-1.14.0\messages_zh.js" />
+    <Content Include="Mobile\assets\js\jquery.min.js" />
+    <Content Include="Mobile\assets\layer\layer.css" />
+    <Content Include="Mobile\assets\layer\layer.js" />
+    <Content Include="Mobile\Controllers\App.js" />
+    <Content Include="Mobile\Controllers\ListCtrl.js" />
+    <Content Include="Mobile\index.html" />
+    <Content Include="Mobile\list.html" />
     <Content Include="Mobile\sazh.html" />
+    <Content Include="Mobile\sazh_files\index23b0e8.css" />
+    <Content Include="Mobile\sazh_files\soon322696.js" />
+    <Content Include="Mobile\手机新浪网.html" />
     <Content Include="nestable-list.html" />
     <Content Include="obj\Debug\LiuZUnion.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\LiuZUnion.dll" />
@@ -2356,10 +2375,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Mobile\assets\" />
-    <Folder Include="Mobile\Controllers\" />
-    <Folder Include="Mobile\sazh_files\" />
     <Folder Include="Mobile\webapi\" />
+    <Folder Include="Mobile\手机新浪网_files\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />

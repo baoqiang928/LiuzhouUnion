@@ -2,55 +2,14 @@
 myApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/info");
     $stateProvider
-        .state("info", {
-            url: "/info",
-            templateUrl: "../MembershipReg/info.html"
-        })
-       .state("invoice", {
-           url: "/invoice",
-           templateUrl: "../MembershipReg/invoice.html"
-       })
-       .state("meeting", {
-           url: "/meeting",
-           templateUrl: "../MembershipReg/meeting.html"
-       })
-       .state("specialmeeting", {
-           url: "/specialmeeting",
-           templateUrl: "../MembershipReg/SpecialMeeting.html"
-       })
-
-       .state("success", {
-           url: "/success",
-           templateUrl: "../MembershipReg/success.html"
-       })
-       .state("hotel", {
-           url: "/hotel",
-           templateUrl: "../MembershipReg/hotel.html"
-       })
-       .state("hotelinfo", {
-           url: "/hotelinfo",
-           templateUrl: "../MembershipReg/HotelInfo.html"
-       })
-        .state("MultipleEntrance", {
-            url: "/MultipleEntrance",
-            templateUrl: "../MembershipReg/MultipleEntrance.html"
-        })
-        .state("qrcode", {
-            url: "/qrcode",
-            templateUrl: "../MembershipReg/qrcode.html"
+        .state("list", {
+            url: "/list",
+            templateUrl: "../Mobile/list.html"
         })
         .state("login", {
             url: "/login",
             templateUrl: "../MembershipReg/Login.html"
         });
-
-
-    //$scope.wWidth = $window.innerWidth;
-    //console.log("$scope.wWidth", $window.innerWidth);
-
-    //myStyle
-
-
 
 });
 
@@ -60,7 +19,7 @@ var StoreService = angular.module('StoreService', []);
 //请求服务
 StoreService.factory('requestService', function ($http, $q) {
 
-    var ApiUrl = "http://localhost:17518/MembershipReg/webapi/Handler1.ashx";
+    var ApiUrl = "http://localhost:17518/Mobile/webapi/Handler1.ashx";
     //var ApiUrl = "http://www.glorytimes.com.cn/web/pre_reg/MembershipReg/webapi/Handler1.ashx";
     var request = {
         method: 'POST',
@@ -154,27 +113,3 @@ myApp.factory('locals', ['$window', function ($window) {
     }
 }]);
 
-function GetLogoPicName(MeetingID) {
-    if (MeetingID == "2") {
-        return "logo.jpg";
-    }
-    return "TOP2018.jpg";
-}
-
-
-angular.module("myApp")
-    .controller('IndexCtrl', function ($scope, $location, requestService, $state, locals,$window) {
-
-        //$scope.myStyle = "margin:0;padding:0;font:12px/15px 'Helvetica Neue',Arial, Helvetica, sans-serif;color: #555;background: #f5f5f5 url(bg.jpg);";
-        $scope.myStyle = "margin:0 auto;width:900px";
-        //$("body").css("background", "url(bg.jpg)");
-        //$("body").css("margin", "0 auto");
-        //$("body").css("margin", "margin:0 auto;width:900px");
-        console.log("message", $window.innerWidth);
-        //alert($window.innerWidth);
-        if ($window.innerWidth > 500) {
-            $("#aaa").css('margin', '0 auto');
-            $("#aaa").css('width', '900px');
-        }
-
-    });
