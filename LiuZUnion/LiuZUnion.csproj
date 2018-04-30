@@ -225,9 +225,6 @@
     <Content Include="js\common\common.js" />
     <Content Include="js\common\zepto.js" />
     <Content Include="login.html" />
-    <Content Include="Mobile\3.html" />
-    <Content Include="Mobile\3_files\index23b0e8.css" />
-    <Content Include="Mobile\3_files\soon322696.js" />
     <Content Include="Mobile\assets\js\angular-sanitize.min.js" />
     <Content Include="Mobile\assets\js\angular-ui-router.js" />
     <Content Include="Mobile\assets\js\angular.min.js" />
@@ -243,9 +240,6 @@
     <Content Include="Mobile\Controllers\ListCtrl.js" />
     <Content Include="Mobile\index.html" />
     <Content Include="Mobile\list.html" />
-    <Content Include="Mobile\sazh.html" />
-    <Content Include="Mobile\sazh_files\index23b0e8.css" />
-    <Content Include="Mobile\sazh_files\soon322696.js" />
     <Content Include="nestable-list.html" />
     <Content Include="obj\Debug\LiuZUnion.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\LiuZUnion.dll" />

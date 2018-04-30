@@ -27,7 +27,19 @@ namespace MvcApplication1.Controllers
             }
             return DictionaryList;
         }
-      
+
+        public object Get([FromUri]string DicID, string Title, int currentPage, int itemsPerPage)
+        {
+            int TotalItems = 0;
+            int PagesLength = 0;
+            List<ArticleInfo> ArticleInfoList = new ArticleLogic().Query(DicID, Title, currentPage, itemsPerPage, ref TotalItems, ref PagesLength);
+            return new
+            {
+                TotalItems = TotalItems,
+                PagesLength = PagesLength,
+                Results = ArticleInfoList
+            };
+        }
 
     }
 }

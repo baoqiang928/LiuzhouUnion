@@ -279,7 +279,6 @@
 <body id="" data-ng-app="myApp" class="zh_CN ">
 
     <script>
-
         var benchmark = {
             mark: function (key) {
                 benchmark[key] = (+new Date());
@@ -338,9 +337,9 @@
                 <div class="tab_hd">
                     <div class="tab_hd_inner">
 
-                        <div type="index" data-index="$index" ng-repeat="item in DictionaryList" class="item active">{{item.Name}}</div>
+                        <div type="index" data-index="$index" ng-repeat="item in DictionaryList" ng-click="goto(item.ID)" class="item active">{{item.Name}}</div>
 
-<!--                        <div type="index" data-index="1" class="item ">各区动态</div>
+                        <!--                        <div type="index" data-index="1" class="item ">各区动态</div>
 
                         <div type="index" data-index="2" class="item ">试验区</div>
 
@@ -351,7 +350,20 @@
                     </div>
                 </div>
                 <div class="tab_bd">
-                    <div data-ui-view=""></div>
+                    <div class="article_list article_list_0">
+                        <a ng-repeat="ArticleInfo in ArticleInfoList" class="list_item js_post" href="http://mp.weixin.qq.com/s?__biz=MzAwNjI2ODE4Nw==&amp;mid=2650060479&amp;idx=1&amp;sn=eee17f3af3b0f6e1144cf3090752f40b&amp;scene=19#wechat_redirect">
+                            <div class="cover">
+                                <img class="img js_img" src="./sazh_files/0" alt="">
+                            </div>
+                            <div class="cont">
+                                <h2 class="title js_title">{{ArticleInfo.Title}}</h2>
+                                <p class="desc">{{ArticleInfo.Title}}</p>
+                            </div>
+                        </a>
+
+                       
+
+                    </div>
                 </div>
             </div>
 
