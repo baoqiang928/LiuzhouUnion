@@ -17,10 +17,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 //服务
 var StoreService = angular.module('StoreService', []);
 //请求服务
-StoreService.factory('requestService', function ($http, $q) {
+StoreService.factory('requestService', function ($http, $q, APIUrl) {
 
-    var ApiUrl = "http://localhost:17518/Mobile/webapi/Handler1.ashx";
+    //var ApiUrl = "http://localhost:17518/Mobile/webapi/Handler1.ashx";
     //var ApiUrl = "http://www.glorytimes.com.cn/web/pre_reg/MembershipReg/webapi/Handler1.ashx";
+    var ApiUrl = "http://" + APIUrl[0].url + "/api/";
     var request = {
         method: 'POST',
         url: '',

@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\DictionaryBigTreesController.cs" />
     <Compile Include="Controllers\DictionaryBigTreesViewController.cs" />
     <Compile Include="Controllers\DictionaryTreesController.cs" />

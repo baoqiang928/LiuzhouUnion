@@ -12,6 +12,8 @@
     <script src="assets/js/angular-ui-router.js"></script>
 
     <script src="Controllers/App.js"></script>
+    <script src="Controllers/constant.js"></script>
+    <script src="Controllers/IndexCtrl.js"></script>
     <script src="Controllers/ListCtrl.js"></script>
     <script nonce="" type="text/javascript">
         window.logs = {
@@ -332,19 +334,19 @@
 
                 </div>
             </div>
-            <div class="tab js_plugin" id="namespace_1" data-pid="2">
+            <div class="tab js_plugin" id="namespace_1" data-pid="2" ng-controller="IndexCtrl">
                 <div class="tab_hd">
                     <div class="tab_hd_inner">
 
-                        <div type="index" data-index="0" class="item active">走进深工</div>
+                        <div type="index" data-index="$index" ng-repeat="item in DictionaryList" class="item active">{{item.Name}}</div>
 
-                        <div type="index" data-index="1" class="item ">各区动态</div>
+<!--                        <div type="index" data-index="1" class="item ">各区动态</div>
 
                         <div type="index" data-index="2" class="item ">试验区</div>
 
                         <div type="index" data-index="3" class="item ">工会百科</div>
 
-                        <div type="index" data-index="4" class="item ">特别策划</div>
+                        <div type="index" data-index="4" class="item ">特别策划</div>-->
 
                     </div>
                 </div>
