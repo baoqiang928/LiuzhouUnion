@@ -225,6 +225,7 @@
     <Content Include="js\common\common.js" />
     <Content Include="js\common\zepto.js" />
     <Content Include="login.html" />
+    <Content Include="Mobile\aa.js" />
     <Content Include="Mobile\assets\js\angular-sanitize.min.js" />
     <Content Include="Mobile\assets\js\angular-ui-router.js" />
     <Content Include="Mobile\assets\js\angular.min.js" />
@@ -234,12 +235,20 @@
     <Content Include="Mobile\assets\js\jquery.min.js" />
     <Content Include="Mobile\assets\layer\layer.css" />
     <Content Include="Mobile\assets\layer\layer.js" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\.gitignore" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\src\infinite-scroll.js" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\test\protractor.conf.js" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\test\spec\ng-infinite-scroll.spec.js" />
     <Content Include="Mobile\Controllers\App.js" />
     <Content Include="Mobile\Controllers\constant.js" />
     <Content Include="Mobile\Controllers\IndexCtrl.js" />
     <Content Include="Mobile\Controllers\ListCtrl.js" />
+    <Content Include="Mobile\HtmlPage1.html" />
     <Content Include="Mobile\index.html" />
+    <Content Include="Mobile\jquery-3.3.1.min.js" />
     <Content Include="Mobile\list.html" />
+    <Content Include="Mobile\sazh_files\index23b0e8.css" />
+    <Content Include="Mobile\sazh_files\soon322696.js" />
     <Content Include="nestable-list.html" />
     <Content Include="obj\Debug\LiuZUnion.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\LiuZUnion.dll" />
@@ -2330,6 +2339,17 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="assets\font\fontawesome-webfont.woff" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\.babelrc" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\.eslintrc.json" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\.travis.yml" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\Gruntfile.coffee" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\id_rsa_nginfinite.enc" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\inert-bower.json" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\LICENSE" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\make-bower-build.sh" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\package.json" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\README.md" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\test\.eslintrc.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

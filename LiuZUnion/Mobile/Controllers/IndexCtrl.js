@@ -15,7 +15,7 @@
                 currentPage: "",
                 itemsPerPage: "",
                 Title: "",
-                DicID: "1"
+                DicID: id
             };
             //$scope.data1.DictID = "1";
             $scope.data1.currentPage = 1;
