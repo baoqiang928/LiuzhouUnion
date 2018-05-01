@@ -1,6 +1,5 @@
 angular.module("myApp")
     .controller('ArticleOpeCtrl', function ($scope, $location, requestService, $stateParams, $state) {
-        alert(2);
         $scope._simpleConfig = {
             //初始化编辑器内容  
             content: '<p>test1</p>',

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Model
@@ -64,6 +65,43 @@ namespace Model
             get { return createDateTime; }
             set { createDateTime = value; }
         }
+
+        public string FirstPicUrl
+        {
+            get
+            {
+                return getimgurl(note);
+            }
+        }
+
+        private string firstPicUrl;
+
+
+        #region 获取第一张图片
+        /// <summary>
+        /// 获取HTML文本的图片地址
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>/
+        /// 
+        public string getimgurl(string html)
+        {
+            List<string> resultStr = new List<string>();
+            html = html.ToLower().Replace("'", "").Replace("\"", "").Replace("<img ", "^");
+            if (html.Split('^').Length > 2)
+                html = html.Split('^')[1];
+            else
+                return "";
+            html = html.ToLower().Replace("src=", "^").Replace("/>", "^");
+            if (html.Split('^').Length > 2)
+            {
+                return html.Split('^')[1];
+            }
+            else
+                return "";
+        }
+        #endregion
+
 
     }
 }

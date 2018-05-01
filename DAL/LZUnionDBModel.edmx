@@ -13,7 +13,7 @@
           <Property Name="DicID" Type="int" Nullable="false" />
           <Property Name="SerialNum" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
-          <Property Name="Note" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Note" Type="nvarchar(max)" />
           <Property Name="Remark" Type="nvarchar" MaxLength="1000" />
           <Property Name="CreateDateTime" Type="datetime" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
@@ -67,7 +67,7 @@
           <Property Name="DicID" Type="Int32" Nullable="false" />
           <Property Name="SerialNum" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Note" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
