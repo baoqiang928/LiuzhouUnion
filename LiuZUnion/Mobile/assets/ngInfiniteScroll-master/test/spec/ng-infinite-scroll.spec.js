@@ -1,6 +1,5 @@
 import fs from 'fs';
 import mkdirp from 'mkdirp';
-
 function retry(times, fn) {
   function doRetry() {
     for (let i = 0; i < (times - 1); i += 1) {

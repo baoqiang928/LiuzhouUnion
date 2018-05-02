@@ -1,4 +1,4 @@
-﻿var myApp = angular.module("myApp", ["ui.router", "StoreService", "ngSanitize"]);
+﻿var myApp = angular.module("myApp", ["ui.router", "StoreService", "ngSanitize", "infinite-scroll"]);
 myApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/info");
     $stateProvider

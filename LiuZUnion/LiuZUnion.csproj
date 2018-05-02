@@ -225,6 +225,7 @@
     <Content Include="js\common\common.js" />
     <Content Include="js\common\zepto.js" />
     <Content Include="login.html" />
+    <Content Include="Mobile\A.js" />
     <Content Include="Mobile\aa.js" />
     <Content Include="Mobile\assets\js\angular-sanitize.min.js" />
     <Content Include="Mobile\assets\js\angular-ui-router.js" />
@@ -233,11 +234,14 @@
     <Content Include="Mobile\assets\js\jquery-validation-1.14.0\jquery.validate.min.js" />
     <Content Include="Mobile\assets\js\jquery-validation-1.14.0\messages_zh.js" />
     <Content Include="Mobile\assets\js\jquery.min.js" />
+    <Content Include="Mobile\assets\js\ng-infinite-scroll.min.js" />
     <Content Include="Mobile\assets\layer\layer.css" />
     <Content Include="Mobile\assets\layer\layer.js" />
     <Content Include="Mobile\assets\ngInfiniteScroll-master\.gitignore" />
     <Content Include="Mobile\assets\ngInfiniteScroll-master\src\infinite-scroll.js" />
     <Content Include="Mobile\assets\ngInfiniteScroll-master\test\protractor.conf.js" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\test\spec\ng-infinite-scroll.js" />
+    <Content Include="Mobile\assets\ngInfiniteScroll-master\test\spec\ng-infinite-scroll.min.js" />
     <Content Include="Mobile\assets\ngInfiniteScroll-master\test\spec\ng-infinite-scroll.spec.js" />
     <Content Include="Mobile\Controllers\App.js" />
     <Content Include="Mobile\Controllers\constant.js" />

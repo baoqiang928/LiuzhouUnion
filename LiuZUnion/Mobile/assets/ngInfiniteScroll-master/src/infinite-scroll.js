@@ -1,7 +1,7 @@
+alert(1);
 import angular from 'angular';
 
 const MODULE_NAME = 'infinite-scroll';
-
 angular.module(MODULE_NAME, [])
   .value('THROTTLE_MILLISECONDS', null)
   .directive('infiniteScroll', [
