@@ -44,24 +44,27 @@ angular.module("myApp")
         }
 
         $scope.Save = function () {
-            UE.getEditor('idTest').setContent(" ", true);
-            $scope.$apply();//必需手动进行脏值检测,否则数据无法刷新到界面  
-            if (!$('#validation-form').valid()) {
-                return false;
-            }
+            setTimeout(function () {
+                UE.getEditor('idTest').setContent(" ", true);
+                $scope.$apply();//必需手动进行脏值检测,否则数据无法刷新到界面  
+                //$scope.$$phase || $scope.$apply();
+                if (!$('#validation-form').valid()) {
+                    return false;
+                }
 
-            if ($stateParams.ID == "") {
-                requestService.add(Sources, $scope.data).then(function (data) {
+                if ($stateParams.ID == "") {
+                    requestService.add(Sources, $scope.data).then(function (data) {
+                        alert('保存成功。');
+                        $state.go("Article");
+                    });
+                    return;
+                }
+
+                requestService.update(Sources, $scope.data).then(function (data) {
                     alert('保存成功。');
                     $state.go("Article");
                 });
-                return;
-            }
-
-            requestService.update(Sources, $scope.data).then(function (data) {
-                alert('保存成功。');
-                $state.go("Article");
-            });
+            }, 10);
         };
 
 
