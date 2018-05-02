@@ -52,13 +52,15 @@ angular.module("myApp")
 
             if ($stateParams.ID == "") {
                 requestService.add(Sources, $scope.data).then(function (data) {
-                    $state.go("ArticleList");
+                    alert('保存成功。');
+                    $state.go("Article");
                 });
                 return;
             }
 
             requestService.update(Sources, $scope.data).then(function (data) {
-                $state.go("ArticleList");
+                alert('保存成功。');
+                $state.go("Article");
             });
         };
 
