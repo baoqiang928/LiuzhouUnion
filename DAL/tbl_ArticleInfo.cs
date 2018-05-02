@@ -21,5 +21,6 @@ namespace DAL
         public string Note { get; set; }
         public string Remark { get; set; }
         public System.DateTime CreateDateTime { get; set; }
+        public string IsTopArticle { get; set; }
     }
 }

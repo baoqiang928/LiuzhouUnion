@@ -183,6 +183,8 @@ namespace DAL
 
             ArticleInfo.Title = ArticleInfoEntity.Title;
 
+            ArticleInfo.IsTopArticle = ArticleInfoEntity.IsTopArticle;
+
             ArticleInfo.Note = ArticleInfoEntity.Note;
 
             ArticleInfo.Remark = ArticleInfoEntity.Remark;
@@ -207,6 +209,9 @@ namespace DAL
 
             if (ArticleInfo.Title != null)
                 ArticleInfoEntity.Title = ArticleInfo.Title;
+
+            if (ArticleInfo.IsTopArticle != null)
+                ArticleInfoEntity.IsTopArticle = ArticleInfo.IsTopArticle;
 
             if (ArticleInfo.Note != null)
                 ArticleInfoEntity.Note = ArticleInfo.Note;

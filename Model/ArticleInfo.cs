@@ -47,6 +47,15 @@ namespace Model
             get { return note; }
             set { note = value; }
         }
+        private string isTopArticle;
+        /// <summary>
+        /// 是否在首页显示
+        /// </summary>
+        public string IsTopArticle
+        {
+            get { return isTopArticle; }
+            set { isTopArticle = value; }
+        }
         private string remark;
         /// <summary>
         /// 备注
@@ -56,6 +65,7 @@ namespace Model
             get { return remark; }
             set { remark = value; }
         }
+
         private DateTime? createDateTime;
         /// <summary>
         /// 創建時間
