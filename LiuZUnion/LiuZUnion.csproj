@@ -180,6 +180,7 @@
     <Content Include="Controllers\DictionaryTree\DicInfoOpeCtrl.js" />
     <Content Include="Controllers\DictionaryTree\DictionaryBigTreeCtrl.js" />
     <Content Include="Controllers\DictionaryTree\DictionaryTreeCtrl.js" />
+    <Content Include="Controllers\DictionaryTree\DictionaryTreeSelectCtrl.js" />
     <Content Include="Controllers\DrawUtil.js" />
     <Content Include="Controllers\FunctionAnalyseCtrl.js" />
     <Content Include="Controllers\JavaScript.js" />
@@ -1021,10 +1022,6 @@
     <Content Include="pages\CauseEffect\3.png" />
     <Content Include="pages\CauseEffect\CauseEffectOperate.html" />
     <Content Include="pages\CauseEffect\test.js" />
-    <Content Include="pages\ConflictResolve\ConflictResolveList.html" />
-    <Content Include="pages\ConflictResolve\ConflictResolveOpe.html" />
-    <Content Include="pages\ConflictResolve\PhyConflictResolveOpe.html" />
-    <Content Include="pages\ConflictResolve\TechConflictResolveOpe.html" />
     <Content Include="pages\Conflict\0.jpg" />
     <Content Include="pages\Conflict\1.jpg" />
     <Content Include="pages\Conflict\3.jpg" />
