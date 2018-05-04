@@ -10,13 +10,14 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DicID" Type="int" Nullable="false" />
+          <Property Name="DicIDs" Type="nvarchar" MaxLength="500" />
+          <Property Name="DicNames" Type="nvarchar" MaxLength="500" />
           <Property Name="SerialNum" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Note" Type="nvarchar(max)" />
           <Property Name="Remark" Type="nvarchar" MaxLength="1000" />
           <Property Name="IsTopArticle" Type="nvarchar" MaxLength="50" />
-          <Property Name="CreateDateTime" Type="datetime" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_DictionaryTreeInfo">
           <Key>
@@ -65,13 +66,14 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DicID" Type="Int32" Nullable="false" />
+          <Property Name="DicIDs" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DicNames" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="SerialNum" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IsTopArticle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -98,13 +100,14 @@
           <EntitySetMapping Name="tbl_ArticleInfo">
             <EntityTypeMapping TypeName="LZUnionDBModel.tbl_ArticleInfo">
               <MappingFragment StoreEntitySet="tbl_ArticleInfo">
-                <ScalarProperty Name="IsTopArticle" ColumnName="IsTopArticle" />
                 <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="IsTopArticle" ColumnName="IsTopArticle" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="SerialNum" ColumnName="SerialNum" />
-                <ScalarProperty Name="DicID" ColumnName="DicID" />
+                <ScalarProperty Name="DicNames" ColumnName="DicNames" />
+                <ScalarProperty Name="DicIDs" ColumnName="DicIDs" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

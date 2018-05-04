@@ -30,7 +30,8 @@ angular.module("myApp")
         };
         var Sources = "Articles";
         $scope.data = {
-            DicID: "",
+            DicIDs: "",
+            DicNames: "",
             SerialNum: "",
             Title: "",
             Note: "",
@@ -51,7 +52,7 @@ angular.module("myApp")
                 if (!$('#validation-form').valid()) {
                     return false;
                 }
-
+                console.log("$scope.data", $scope.data);
                 if ($stateParams.ID == "") {
                     requestService.add(Sources, $scope.data).then(function (data) {
                         alert('保存成功。');
@@ -66,6 +67,13 @@ angular.module("myApp")
                 });
             }, 10);
         };
+
+
+        $scope.showMenu = function () {
+            $('#modal-table2').modal('show');
+        };
+
+
 
 
         $('#validation-form').validate({

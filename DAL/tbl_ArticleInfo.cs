@@ -15,12 +15,13 @@ namespace DAL
     public partial class tbl_ArticleInfo
     {
         public int ID { get; set; }
-        public int DicID { get; set; }
+        public string DicIDs { get; set; }
+        public string DicNames { get; set; }
         public int SerialNum { get; set; }
         public string Title { get; set; }
         public string Note { get; set; }
         public string Remark { get; set; }
-        public System.DateTime CreateDateTime { get; set; }
         public string IsTopArticle { get; set; }
+        public System.DateTime CreateDateTime { get; set; }
     }
 }

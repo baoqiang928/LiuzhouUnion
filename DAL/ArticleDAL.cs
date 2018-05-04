@@ -155,8 +155,8 @@ namespace DAL
             int startRow = (pageIndex - 1) * pageSize;
             Expression<Func<tbl_ArticleInfo, bool>> where = PredicateExtensionses.True<tbl_ArticleInfo>();
 
-            if (!string.IsNullOrWhiteSpace(DicID))
-                where = where.And(a => a.DicID==int.Parse(DicID));
+            //if (!string.IsNullOrWhiteSpace(DicID))
+            //    where = where.And(a => a.DicIDs==int.Parse(DicID));
 
             if (!string.IsNullOrWhiteSpace(Title))
                 where = where.And(a => a.Title.Contains(Title));
@@ -177,7 +177,9 @@ namespace DAL
 
             ArticleInfo.ID = ArticleInfoEntity.ID;
 
-            ArticleInfo.DicID = ArticleInfoEntity.DicID;
+            ArticleInfo.DicIDs = ArticleInfoEntity.DicIDs;
+
+            ArticleInfo.DicNames = ArticleInfoEntity.DicNames;
 
             ArticleInfo.SerialNum = ArticleInfoEntity.SerialNum;
 
@@ -201,8 +203,11 @@ namespace DAL
             if (ArticleInfo.ID != null)
                 ArticleInfoEntity.ID = ArticleInfo.ID ?? 0;
 
-            if (ArticleInfo.DicID != null)
-                ArticleInfoEntity.DicID = ArticleInfo.DicID;
+            if (ArticleInfo.DicIDs != null)
+                ArticleInfoEntity.DicIDs = ArticleInfo.DicIDs;
+
+            if (ArticleInfo.DicNames != null)
+                ArticleInfoEntity.DicNames = ArticleInfo.DicNames;
 
             if (ArticleInfo.SerialNum != null)
                 ArticleInfoEntity.SerialNum = ArticleInfo.SerialNum;

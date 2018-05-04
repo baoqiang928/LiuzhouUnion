@@ -1,5 +1,5 @@
 ﻿angular.module("myApp")
-    .controller('DictionTreeSelectCtrl', function ($scope, $location, requestService, $state) {
+    .controller('DictionaryTreeSelectCtrl', function ($scope, $location, requestService, $state) {
 
         var setting = {
             check: {
@@ -52,20 +52,29 @@
             var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
 			nodes = zTree.getCheckedNodes(true),
 			v = "";
+            ids = "";
             for (var i = 0, l = nodes.length; i < l; i++) {
                 v += nodes[i].name + ",";
+                ids += nodes[i].id + ",";
             }
+
             if (v.length > 0) v = v.substring(0, v.length - 1);
-            var cityObj = $("#citySel");
-            cityObj.attr("value", v);
+            $scope.$parent.data.DicIDs = ids;
+            $scope.$parent.data.DicNames = v;
+            //alert($scope.$parent.data.DicID);
+            $scope.$parent.$apply();
+            //var cityObj = $("#citySel");
+            //cityObj.attr("value", v);
         }
 
-        function showMenu() {
-            var cityObj = $("#citySel");
-            var cityOffset = $("#citySel").offset();
-            $("#menuContent").css({ left: cityOffset.left + "px", top: cityOffset.top + cityObj.outerHeight() + "px" }).slideDown("fast");
-
-            $("body").bind("mousedown", onBodyDown);
+        $scope.showMenu = function () {
+            $('#modal-table2').modal('show');
+            //var cityObj = $("#citySel");
+            //var cityOffset = $("#citySel").offset();
+            //console.log("cityOffset", cityOffset);
+            //$("#menuContent").css({ left: cityOffset.left + "px", top: cityOffset.top + cityObj.outerHeight() + "px" }).slideDown("fast");
+            //alert(2);
+            //$("body").bind("mousedown", onBodyDown);
         }
         function hideMenu() {
             $("#menuContent").fadeOut("fast");

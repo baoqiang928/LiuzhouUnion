@@ -17,12 +17,21 @@ namespace Model
             get { return id; }
             set { id = value; }
         }
-        private int dicID;
-        public int DicID
+
+        private string dicIDs;
+        public string DicIDs
         {
-            get { return dicID; }
-            set { dicID = value; }
+            get { return dicIDs; }
+            set { dicIDs = value; }
         }
+
+        private string dicNames;
+        public string DicNames
+        {
+            get { return dicNames; }
+            set { dicNames = value; }
+        }
+
         private int serialNum;
         public int SerialNum
         {
