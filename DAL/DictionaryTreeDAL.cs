@@ -211,20 +211,23 @@ namespace DAL
             return new DictionaryTreeInfo();
         }
 
-        public List<DictionaryTreeInfo> Query(string ProjectID, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
+        public List<DictionaryTreeInfo> Query(string ProjectID,string TreeTypeID, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
             int startRow = (pageIndex - 1) * pageSize;
             Expression<Func<tbl_DictionaryTreeInfo, bool>> where = PredicateExtensionses.True<tbl_DictionaryTreeInfo>();
 
             if (!string.IsNullOrWhiteSpace(ProjectID))
                 where = where.And(a => a.ProjectID == int.Parse(ProjectID));
+            if (!string.IsNullOrWhiteSpace(ProjectID))
+                where = where.And(a => a.TreeTypeID == int.Parse(TreeTypeID));
 
             using (LZUnionDBEntitiesConn LiuZUnionDB = new LZUnionDBEntitiesConn())
             {
                 var query = LiuZUnionDB.tbl_DictionaryTreeInfo.Where(where.Compile());
                 totalItems = query.Count();
                 PagesLength = (int)Math.Ceiling((double)totalItems / pageSize);
-                query = query.OrderBy(p => p.SerialNum).Skip(startRow).Take(pageSize);
+                //query = query.OrderBy(p => p.SerialNum).Skip(startRow).Take(pageSize);
+                query = query.OrderBy(p => p.FatherID).Skip(startRow).Take(pageSize);
                 return GetGetBusinessObjectList(query.ToList());
             }
         }

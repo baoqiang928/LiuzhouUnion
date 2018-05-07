@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using BLL;
 using Model;
+using System.Collections.Generic;
 
 namespace MvcApplication1.Controllers
 {
@@ -11,11 +12,14 @@ namespace MvcApplication1.Controllers
         {
             return new DictionaryTreeLogic().GetByID(id);
         }
-        public class a
+        public class zTreeItem
         {
             public string id = "";
+            public string pID = "";
             public string name = "";
             public bool isParent = true;
+            //public bool open = false;
+            //public bool nocheck = false;
         }
         public object Get([FromUri]string SonID, string OpeType)
         {
@@ -27,7 +31,47 @@ namespace MvcApplication1.Controllers
             {
                 return new DictionaryTreeLogic().GetDevidePrincipleInfoByInventivePrincipleID(SonID);
             }
+            if (OpeType == "GetArticlesDictionarySelector")
+            {
+                int totalItems = 0;
+                int PagesLength = 0;
+                List<DictionaryTreeInfo> DicList = new DictionaryTreeLogic().Query("0", "5", 1, 999, ref totalItems, ref PagesLength);
+                List<zTreeItem> zTreeItemList = new List<zTreeItem>();
+                string codes = "";
+                foreach (DictionaryTreeInfo DictionaryTreeInfo in DicList)
+                {
+                    if (DictionaryTreeInfo.FatherID == null)
+                    {
+                        codes = codes + "{ id: " + DictionaryTreeInfo.ID.ToString() + ", pId: 0, name: \"" + DictionaryTreeInfo.Name + "\" , open: true, nocheck: true },";
+                    }
+                    else
+                    {
+                        codes = codes + "{ id: " + DictionaryTreeInfo.ID.ToString() + ", pId: " + DictionaryTreeInfo.FatherID.ToString() + ", name: \"" + DictionaryTreeInfo.Name + "\" },";
+                    }
 
+                    //zTreeItem zTreeItem = new zTreeItem();
+                    //zTreeItem.id = DictionaryTreeInfo.ID.ToString();
+                    //zTreeItem.name = DictionaryTreeInfo.Name;
+                    //if (DictionaryTreeInfo.FatherID == null)
+                    //{
+                    //    //zTreeItem.isParent = true;
+                    //    //zTreeItem.open = true;
+                    //    //zTreeItem.nocheck = true;
+                    //    zTreeItem.pID = "0";
+                    //}
+                    //else
+                    //{
+                    //    //zTreeItem.isParent = false;
+                    //    zTreeItem.pID = DictionaryTreeInfo.FatherID.ToString();
+                    //}
+                    //zTreeItemList.Add(zTreeItem);
+                }
+                codes = "[" + codes.TrimEnd(',') + "]";
+                return new
+                {
+                    Results = codes
+                };
+            }
             return new object();
         }
         public object Get([FromUri]int ProjectID, string TreeTypeID)

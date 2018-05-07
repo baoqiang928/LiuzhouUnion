@@ -16,7 +16,7 @@ namespace DAL.Tests
         public void GetFathersTest()
         {
             int a = 0;
-          var b=  new DictionaryTreeDAL().Query("0", 1, 1, ref a, ref a);
+          //var b=  new DictionaryTreeDAL().Query("0", 1, 1, ref a, ref a);
             Assert.Fail();
         }
     }

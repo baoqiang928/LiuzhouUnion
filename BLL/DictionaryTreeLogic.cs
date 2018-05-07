@@ -330,9 +330,9 @@ namespace BLL
         }
 
 
-        public List<DictionaryTreeInfo> Query(string ProjectID, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
+        public List<DictionaryTreeInfo> Query(string ProjectID,string TreeTypeID, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
-            return new DictionaryTreeDAL().Query(ProjectID, pageIndex, pageSize, ref totalItems, ref PagesLength);
+            return new DictionaryTreeDAL().Query(ProjectID, TreeTypeID, pageIndex, pageSize, ref totalItems, ref PagesLength);
         }
     }
 }
