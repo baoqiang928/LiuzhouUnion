@@ -14,9 +14,9 @@ angular.module("myApp")
         $scope.data = {
             currentPage: "",
             itemsPerPage: "",
-            DicID: "",
-                    
-                         Title: ""
+            DicIDs: "",
+            DicNames: "",
+            Title: ""
         };
 
         var GetArticles = function () {
@@ -70,6 +70,10 @@ angular.module("myApp")
         $scope.Update = function (ID) {
             $state.go("ArticleAdd", { ID: ID });
         }
+
+        $scope.showMenu = function () {
+            $('#modal-table2').modal('show');
+        };
 
     });//end
 

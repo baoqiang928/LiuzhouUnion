@@ -150,20 +150,36 @@ namespace DAL
             return new ArticleInfo();
         }
 
-        public List<ArticleInfo> Query(string DicID, string Title, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
+        public List<ArticleInfo> Query(string DicIDs, string Title, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
             int startRow = (pageIndex - 1) * pageSize;
             Expression<Func<tbl_ArticleInfo, bool>> where = PredicateExtensionses.True<tbl_ArticleInfo>();
+            Expression<Func<tbl_ArticleInfo, bool>> where1 = PredicateExtensionses.False<tbl_ArticleInfo>();
 
             //if (!string.IsNullOrWhiteSpace(DicID))
             //    where = where.And(a => a.DicIDs==int.Parse(DicID));
 
+
             if (!string.IsNullOrWhiteSpace(Title))
                 where = where.And(a => a.Title.Contains(Title));
 
+            if (!string.IsNullOrWhiteSpace(DicIDs))
+            {
+                foreach (string id in DicIDs.Split(','))
+                {
+                    if (string.IsNullOrWhiteSpace(id)) continue;
+                    where1 = where1.Or(n => ("," + n.DicIDs + ",").Contains("," + id + ","));//实现或关系连接  
+                }
+                where = where.And(where1);
+            }
             using (LZUnionDBEntitiesConn TrizDB = new LZUnionDBEntitiesConn())
             {
                 var query = TrizDB.tbl_ArticleInfo.Where(where.Compile());
+                //if (!string.IsNullOrWhiteSpace(DicIDs))
+                //{
+                //    //query = TrizDB.tbl_ArticleInfo.Where(where.Compile()).Where(where1.Compile());
+                //    query = TrizDB.tbl_ArticleInfo.Where(where1.Compile());
+                //}
                 totalItems = query.Count();
                 PagesLength = (int)Math.Ceiling((double)totalItems / pageSize);
                 query = query.OrderByDescending(p => p.ID).Skip(startRow).Take(pageSize);

@@ -17,7 +17,7 @@
           <Property Name="Note" Type="nvarchar(max)" />
           <Property Name="Remark" Type="nvarchar" MaxLength="1000" />
           <Property Name="IsTopArticle" Type="nvarchar" MaxLength="50" />
-          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="tbl_DictionaryTreeInfo">
           <Key>
@@ -73,7 +73,7 @@
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="IsTopArticle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
