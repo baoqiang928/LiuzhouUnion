@@ -196,6 +196,7 @@
     <Content Include="Controllers\User.js" />
     <Content Include="Controllers\UserOpeCtrl.js" />
     <Content Include="Controllers\weixinpicture.js" />
+    <Content Include="Doc\图标不显示.txt" />
     <Content Include="dropzone.html" />
     <Content Include="elements.html" />
     <Content Include="Enterprise\Controllers\App.js" />
