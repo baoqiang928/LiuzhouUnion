@@ -107,7 +107,7 @@ namespace Model
         {
             List<string> resultStr = new List<string>();
             html = html.ToLower().Replace("'", "").Replace("\"", "").Replace("<img ", "^");
-            if (html.Split('^').Length > 2)
+            if (html.Split('^').Length >= 2)
                 html = html.Split('^')[1];
             else
                 return "";
