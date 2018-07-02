@@ -207,6 +207,12 @@ namespace DAL
 
             ArticleInfo.Remark = ArticleInfoEntity.Remark;
 
+            ArticleInfo.CoverPicUrl = ArticleInfoEntity.CoverPicUrl;
+
+            ArticleInfo.PureWordsNote = ArticleInfoEntity.PureWordsNote;
+
+            ArticleInfo.BigPictureDisplay = ArticleInfoEntity.BigPictureDisplay;
+
             ArticleInfo.CreateDateTime = ArticleInfoEntity.CreateDateTime;
 
 
@@ -239,6 +245,15 @@ namespace DAL
 
             if (ArticleInfo.Remark != null)
                 ArticleInfoEntity.Remark = ArticleInfo.Remark;
+
+            if (ArticleInfo.CoverPicUrl != null)
+                ArticleInfoEntity.CoverPicUrl = ArticleInfo.CoverPicUrl;
+
+            if (ArticleInfo.PureWordsNote != null)
+                ArticleInfoEntity.PureWordsNote = ArticleInfo.PureWordsNote;
+
+            if (ArticleInfo.BigPictureDisplay != null)
+                ArticleInfoEntity.BigPictureDisplay = ArticleInfo.BigPictureDisplay;
 
         }
 

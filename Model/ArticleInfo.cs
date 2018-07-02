@@ -65,6 +65,39 @@ namespace Model
             get { return isTopArticle; }
             set { isTopArticle = value; }
         }
+        private string bigPictureDisplay;
+        /// <summary>
+        /// 是否在首页显示
+        /// </summary>
+        public string BigPictureDisplay
+        {
+            get { return bigPictureDisplay; }
+            set { bigPictureDisplay = value; }
+        }
+        
+        private string pureWordsNote;
+        /// <summary>
+        /// 是否在首页显示
+        /// </summary>
+        public string PureWordsNote
+        {
+            get { return pureWordsNote; }
+            set { pureWordsNote = value; }
+        }
+
+        private string coverPicUrl;
+        /// <summary>
+        /// 封面图片url
+        /// </summary>
+        public string CoverPicUrl
+        {
+            get {
+                if (string.IsNullOrWhiteSpace(coverPicUrl)) return getimgurl(note);
+                return coverPicUrl;
+            }
+            set { coverPicUrl = value; }
+        }
+
         private string remark;
         /// <summary>
         /// 备注

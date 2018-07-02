@@ -22,6 +22,9 @@ namespace DAL
         public string Note { get; set; }
         public string Remark { get; set; }
         public string IsTopArticle { get; set; }
+        public string BigPictureDisplay { get; set; }
+        public string PureWordsNote { get; set; }
+        public string CoverPicUrl { get; set; }
         public System.DateTime CreateDateTime { get; set; }
     }
 }
