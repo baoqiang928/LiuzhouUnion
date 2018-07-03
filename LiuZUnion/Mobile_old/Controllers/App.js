@@ -1,39 +1,14 @@
-﻿//获取url参数
-function GetQueryString(name) {
-    var after = window.location.hash.split("?")[1];
-    if (after) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-        var r = after.match(reg);
-        if (r != null) {
-            return decodeURIComponent(r[2]);
-        }
-        else {
-            return null;
-        }
-    }
-}
-
-var myApp = angular.module("myApp", ["ui.router", "StoreService", "ngSanitize", "infinite-scroll"]);
+﻿var myApp = angular.module("myApp", ["ui.router", "StoreService", "ngSanitize", "infinite-scroll"]);
 myApp.config(function ($stateProvider, $urlRouterProvider) {
-    var UserID = GetQueryString('UserID');
-    var ColIndex = GetQueryString('ColIndex');
-
-    //$urlRouterProvider.when("", "/index");
+    $urlRouterProvider.when("", "/info");
     $stateProvider
-        //.state("index", {
-        //    params: { "UserID": UserID, "ColumnName": null },
-        //    url: "/index?{UserID}&{ColIndex}",
-        //    templateUrl: "../Mobile/list.html"
-        //})
-        .state("detail", {
-            params: { "UserID": UserID, "ID": null, "ColumnName": null },
-            url: "/detail/?{ID}&{UserID}&{ColumnName}",
-            templateUrl: "../Mobile/DetailInfo.html"
-        })
         .state("list", {
-            params: { "UserID": UserID, "ColumnName": null },
-            url: "/list?{UserID}&{ColIndex}",
+            url: "/list",
             templateUrl: "../Mobile/list.html"
+        })
+        .state("login", {
+            url: "/login",
+            templateUrl: "../MembershipReg/Login.html"
         });
 
 });
@@ -47,7 +22,6 @@ StoreService.factory('requestService', function ($http, $q, APIUrl) {
     //var ApiUrl = "http://localhost:17518/Mobile/webapi/Handler1.ashx";
     //var ApiUrl = "http://www.glorytimes.com.cn/web/pre_reg/MembershipReg/webapi/Handler1.ashx";
     var ApiUrl = "http://" + APIUrl[0].url + "/api/";
-    //var ApiUrl = "http://" + APIUrl[0].url + "/Handler1.ashx";
     var request = {
         method: 'POST',
         url: '',
@@ -139,6 +113,4 @@ myApp.factory('locals', ['$window', function ($window) {
 
     }
 }]);
-
-
 

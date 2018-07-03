@@ -52,6 +52,20 @@ angular.module("myApp")
                 if (!$('#validation-form').valid()) {
                     return false;
                 }
+
+                $scope.data.Note = $scope.data.Note.replace(/</g, 'xiaoyuhao');
+                $scope.data.Note = $scope.data.Note.replace(/>/g, 'dayuhao');
+                $scope.data.Note = $scope.data.Note.replace(/=/g, 'dengyuhao');
+                //$scope.data.Note = $scope.data.Note.replace(/ /g, 'kongge');
+                $scope.data.Note = $scope.data.Note.replace(/src/g, 'aisierxi');
+                //$scope.data.Note = $scope.data.Note.replace(/?/g, 'wenhao');
+                //$scope.data.Note = $scope.data.Note.replace(///g, 'xiegang');
+                //$scope.data.Note = $scope.data.Note.replace(/\r/g, 'xiegangr');
+                //$scope.data.Note = $scope.data.Note.replace(/\n/g, 'xiegangn');
+                $scope.data.Note = $scope.data.Note.replace(/:/g, 'maohao');
+                $scope.data.Note = $scope.data.Note.replace(/%/g, 'baifenhao');
+                $scope.data.Note = $scope.data.Note.replace(/;/g, 'xiaofenhao');
+
                 console.log("$scope.data", $scope.data);
                 if ($stateParams.ID == "") {
                     requestService.add(Sources, $scope.data).then(function (data) {

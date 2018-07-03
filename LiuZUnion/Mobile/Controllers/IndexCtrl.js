@@ -1,67 +1,42 @@
 ﻿angular.module("myApp")
-    .controller('IndexCtrl', function ($scope, $location, requestService, $state, locals) {
+    .controller('IndexCtrl', function ($scope, $location, requestService, $state,$stateParams, locals) {
+        if (GetUserID($stateParams.UserID, locals.get("UserID")) == "-1") return;
+        $scope.UserID = GetUserID($stateParams.UserID, locals.get("UserID"));
+        locals.set("UserID", $scope.UserID);
 
-        //$scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
-        //$scope.loadMore = function () {
-        //    var last = $scope.images[$scope.images.length - 1];
-        //    for (var i = 1; i <= 8; i++) {
-        //        $scope.images.push(last + i);
-        //    }
-        //};
-
-        $scope.DictionaryList = [];
+        $scope.ColumnInfoList = [];
         $scope.data = {
-            ids: "3^4^5^6^7^8"
+            currentPage: "",
+            itemsPerPage: "",
+            UserID: $scope.UserID
         };
-        requestService.lists("Dictionary", $scope.data).then(function (data) {
-            $scope.DictionaryList = data;
-        });
-
-        $scope.CurrentDicID = "3";
-        $scope.data1 = {
-            currentPage: "0",
-            itemsPerPage: "2",
-            Title: "",
-            DicID: $scope.CurrentDicID
-        };
-        $scope.goto = function (id) {
-            $scope.CurrentDicID = id;
-            $scope.data1.DicID = id;
-            $scope.data1.currentPage = 1;
-            //$scope.data1.Title = "5";
-            console.log("$scope.data1", $scope.data1);
-            requestService.lists("Articles", $scope.data1).then(function (data) {
-                $scope.ArticleInfoList = data.Results;
-                console.log("$scope.ArticleInfoList", $scope.ArticleInfoList);
+        $("#js_plugins_loading").attr("style", "");
+        $scope.GetColumnInfoList = function () {
+            $scope.data.currentPage = 1;
+            $scope.data.itemsPerPage = "999";
+            requestService.lists("Columns", $scope.data).then(function (data) {
+                $scope.ColumnInfoList = data.Results;
+                if ((GetQueryString('ColIndex')=="1") && ($scope.ColumnInfoList.length > 0))
+                {
+                    $scope.ColumnInfoList[0].ActiveStatus = "active";
+                    $scope.CurrentColumn = $scope.ColumnInfoList[0].Name;
+                    $scope.goto($scope.ColumnInfoList[0].Name);
+                }                
             });
-
+        }
+        $scope.GetColumnInfoList();
+        $scope.CurrentColumn = "";
+        $scope.goto = function (ColumnName) {
+            $("#js_plugins_loading").attr("style", "");
+            $scope.CurrentColumn = ColumnName;
+            $state.go("list", { "ColumnName": ColumnName });
         };
 
-
-        $scope.loadMore = function () {
-            //    var last = $scope.images[$scope.images.length - 1];
-            //    for (var i = 1; i <= 8; i++) {
-            //        $scope.images.push(last + i);
-            //    }
-            //};
-            //$scope.data1.DicID = "1";
-            $scope.data1.currentPage = parseInt($scope.data1.currentPage) + 1;
-            $scope.data1.DicID = $scope.CurrentDicID;
-            //$scope.data1.Title = "5";
-            console.log("$scope.data2", $scope.data1);
-            requestService.lists("Articles", $scope.data1).then(function (data) {
-                if (data.Results.length > 0) {
-                    for (var i = 0; i < data.Results.length; i++) {
-                        $scope.ArticleInfoList.push(data.Results[i]);
-                    }
-                }
-                console.log("$scope.ArticleInfoList", $scope.ArticleInfoList);
-            });
-
+        $scope.GetActiveStatus = function (name) {
+            if (name == $scope.CurrentColumn) return "active";
+            return "";
         };
-
-
-
+        
 
     });//End
 

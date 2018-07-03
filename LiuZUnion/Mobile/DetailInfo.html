@@ -1,0 +1,34 @@
+﻿<div ng-controller="DetailCtrl">
+<div id="js_article" class="rich_media" >
+
+    <div id="js_top_ad_area" class="top_banner"></div>
+
+    <div class="rich_media_inner">
+
+
+        <div id="page-content" class="rich_media_area_primary">
+
+
+            <div id="img-content">
+
+
+                <h2 class="rich_media_title" id="activity-name">{{data.Title}}</h2>
+                <div id="meta_content" class="rich_media_meta_list">
+                    <!--<em id="publish_time" class="rich_media_meta rich_media_meta_text">5月11日</em>-->
+                </div>
+
+                <div class="rich_media_content " lang="=&quot;en&quot;" id="js_content">
+
+                    <p ng-bind-html="data.HtmlNote | to_trusted"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include="'list.html'"></div>
+</div>
