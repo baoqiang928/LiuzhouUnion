@@ -262,7 +262,10 @@ namespace DAL
             List<ArticleInfo> ArticleInfoList = new List<ArticleInfo>();
             foreach (tbl_ArticleInfo tbl_ArticleInfo in ArticleInfoEntityList)
             {
-                ArticleInfoList.Add(GetBusinessObject(tbl_ArticleInfo));
+                ArticleInfo ArticleInfo = GetBusinessObject(tbl_ArticleInfo);
+                ArticleInfo.Note = "";
+                ArticleInfo.PureWordsNote = "";
+                ArticleInfoList.Add(ArticleInfo);
             }
             return ArticleInfoList;
         }

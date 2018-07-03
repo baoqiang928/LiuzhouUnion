@@ -23,6 +23,7 @@ namespace BLL
 
         public int SaveArticle(ArticleInfo ArticleInfo)
         {
+            ReplaceChar(ArticleInfo);
             if (ArticleInfo.ID == null)
             {
                 return new ArticleDAL().Add(ArticleInfo);
@@ -31,13 +32,29 @@ namespace BLL
             return ArticleInfo.ID ?? 0;
         }
 
+        private void ReplaceChar(ArticleInfo ArticleInfo)
+        {
+            ArticleInfo.Note = ArticleInfo.Note.Replace("xiaoyuhao", "<");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("dayuhao", ">");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("dengyuhao", "=");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("kongge", " ");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("aisierxi", "src");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("wenhao", "?");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("xiegang", "/");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("xiegangr", "\r");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("xiegangn", "\n");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("maohao", ":");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("baifenhao", "%");
+            ArticleInfo.Note = ArticleInfo.Note.Replace("xiaofenhao", ";");
+        }
+
         public ArticleInfo GetByID(string ID)
         {
-           return new ArticleDAL().GetByID(int.Parse(ID));
+            return new ArticleDAL().GetByID(int.Parse(ID));
         }
-        public List<ArticleInfo> Query(string DicIDs,string Title, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
+        public List<ArticleInfo> Query(string DicIDs, string Title, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
-            return new ArticleDAL().Query(DicIDs,Title, pageIndex, pageSize, ref totalItems, ref PagesLength);
+            return new ArticleDAL().Query(DicIDs, Title, pageIndex, pageSize, ref totalItems, ref PagesLength);
         }
     }
 }
