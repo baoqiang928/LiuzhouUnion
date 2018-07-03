@@ -280,6 +280,7 @@
     <Content Include="Mobile\Scripts\jweixin-1.0.0.js" />
     <Content Include="Mobile\t.html" />
     <Content Include="Mobile\test.html" />
+    <Content Include="Mobile\TestUrl.txt" />
     <Content Include="Mobile_old\A.js" />
     <Content Include="Mobile_old\aa.js" />
     <Content Include="Mobile_old\assets\js\angular-sanitize.min.js" />

@@ -15,7 +15,7 @@ function GetQueryString(name) {
 
 var myApp = angular.module("myApp", ["ui.router", "StoreService", "ngSanitize", "infinite-scroll"]);
 myApp.config(function ($stateProvider, $urlRouterProvider) {
-    var UserID = GetQueryString('UserID');
+    var ColID = GetQueryString('ColID');
     var ColIndex = GetQueryString('ColIndex');
 
     //$urlRouterProvider.when("", "/index");
@@ -26,13 +26,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         //    templateUrl: "../Mobile/list.html"
         //})
         .state("detail", {
-            params: { "UserID": UserID, "ID": null, "ColumnID": null },
-            url: "/detail/?{ID}&{UserID}&{ColumnID}",
+            params: { "ColID": ColID, "ID": null, "ColumnID": null },
+            url: "/detail/?{ID}&{ColID}&{ColumnID}",
             templateUrl: "../Mobile/DetailInfo.html"
         })
         .state("list", {
-            params: { "UserID": UserID, "ColumnID": null },
-            url: "/list?{UserID}&{ColIndex}",
+            params: { "ColID": ColID, "ColumnID": null },
+            url: "/list?{ColID}&{ColIndex}",
             templateUrl: "../Mobile/list.html"
         });
 

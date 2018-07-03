@@ -1,16 +1,16 @@
 ﻿angular.module("myApp")
     .controller('IndexCtrl', function ($scope, $location, requestService, $state, $stateParams, locals) {
-
         $scope.ColumnInfoList = [];
         $scope.data = {
             ProjectID: "0",
             TreeTypeID: "5",
-            FatherIDs: "45",
+            FatherIDs: GetQueryString('ColID'),
             OpeType: "GetChildren"
         };
         console.log("$scope.data", $scope.data);
         $("#js_plugins_loading").attr("style", "");
         $scope.GetColumnInfoList = function () {
+            console.log(" $scope.data", $scope.data);
             requestService.lists("DictionaryBigTreesView", $scope.data).then(function (data) {
                 $scope.ColumnInfoList = data;
                 if ((GetQueryString('ColIndex') == "1") && ($scope.ColumnInfoList.length > 0)) {

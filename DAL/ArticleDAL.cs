@@ -150,7 +150,7 @@ namespace DAL
             return new ArticleInfo();
         }
 
-        public List<ArticleInfo> Query(string DicIDs, string Title,string BigPictureDisplay, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
+        public List<ArticleInfo> Query(string DicIDs, string Title, string BigPictureDisplay, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
             int startRow = (pageIndex - 1) * pageSize;
             Expression<Func<tbl_ArticleInfo, bool>> where = PredicateExtensionses.True<tbl_ArticleInfo>();
@@ -266,10 +266,17 @@ namespace DAL
             {
                 ArticleInfo ArticleInfo = GetBusinessObject(tbl_ArticleInfo);
                 ArticleInfo.Note = "";
-                ArticleInfo.PureWordsNote = "";
+                ArticleInfo.PureWordsNote = GetSubString(ArticleInfo.PureWordsNote);
                 ArticleInfoList.Add(ArticleInfo);
             }
             return ArticleInfoList;
+        }
+        private string GetSubString(string PureWordsNote)
+        {
+            if (string.IsNullOrWhiteSpace(PureWordsNote)) return "";
+            if (PureWordsNote.Length > 60)
+                return PureWordsNote.Substring(0, 60);
+            return PureWordsNote;
         }
     }
 }
