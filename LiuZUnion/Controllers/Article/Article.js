@@ -16,6 +16,7 @@ angular.module("myApp")
             itemsPerPage: "",
             DicIDs: "",
             DicNames: "",
+            BigPictureDisplay: "",
             Title: ""
         };
 

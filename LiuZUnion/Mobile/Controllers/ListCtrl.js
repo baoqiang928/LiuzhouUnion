@@ -1,27 +1,21 @@
 ﻿angular.module("myApp")
     .controller('ListCtrl', function ($scope, $location, requestService, $state, $stateParams, locals) {
-        if (GetUserID($stateParams.UserID, locals.get("UserID")) == "-1") return;
-        $scope.UserID = GetUserID($stateParams.UserID, locals.get("UserID"));
-        locals.set("UserID", $scope.UserID);
-        $scope.CurrentColumnName = $stateParams.ColumnName;
-        console.log("$scope.CurrentColumnName", $scope.CurrentColumnName);
-        if ((typeof $scope.CurrentColumnName == 'undefined') || ($scope.CurrentColumnName == null)) {
-            $scope.CurrentColumnName = $scope.$parent.CurrentColumn;
+        $scope.CurrentColumnID = $stateParams.ColumnID;
+        if ((typeof $scope.CurrentColumnID == 'undefined') || ($scope.CurrentColumnID == null)) {
+            $scope.CurrentColumnID = $scope.$parent.CurrentColumnID;
         }
         $scope.busy = true;
-
         $scope.data1 = {
             currentPage: "1",
             itemsPerPage: "5",
-            UserID: $scope.UserID,
-            ColumnName: $scope.CurrentColumnName,
+            Title:"",
+            DicIDs: $scope.CurrentColumnID,
             BigPictureDisplay: ""
         };
         $scope.data1.currentPage = 1;
         $scope.data1.itemsPerPage = 5;
         $scope.ArticleInfoList = [];
         requestService.lists("Articles", $scope.data1).then(function (data) {
-            console.log("data.Results222", data.Results);
             $scope.ArticleInfoList = data.Results;
             $("#js_plugins_loading").attr("style", "display: none;");
             $scope.data1.currentPage = 2;
@@ -47,8 +41,8 @@
 
         };
 
-        $scope.ShowArticle = function (ID, ColumnName) {
-            $state.go("detail", { "ID": ID, "ColumnName": ColumnName });
+        $scope.ShowArticle = function (ID, ColumnID) {
+            $state.go("detail", { "ID": ID, "ColumnID": ColumnID });
         };
 
         $scope.NormalFilter = function (item) {

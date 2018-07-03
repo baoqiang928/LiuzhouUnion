@@ -26,12 +26,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         //    templateUrl: "../Mobile/list.html"
         //})
         .state("detail", {
-            params: { "UserID": UserID, "ID": null, "ColumnName": null },
-            url: "/detail/?{ID}&{UserID}&{ColumnName}",
+            params: { "UserID": UserID, "ID": null, "ColumnID": null },
+            url: "/detail/?{ID}&{UserID}&{ColumnID}",
             templateUrl: "../Mobile/DetailInfo.html"
         })
         .state("list", {
-            params: { "UserID": UserID, "ColumnName": null },
+            params: { "UserID": UserID, "ColumnID": null },
             url: "/list?{UserID}&{ColIndex}",
             templateUrl: "../Mobile/list.html"
         });

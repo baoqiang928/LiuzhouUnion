@@ -14,13 +14,13 @@ namespace MvcApplication1.Controllers
         // GET api/DictionaryTrees/5
         //public DictionaryTreeInfo Get(string id)
         //{
-            //return new DictionaryTreeLogic().GetByID(id);
+        //return new DictionaryTreeLogic().GetByID(id);
         //}
 
         public object Get([FromUri]string ids)
         {
             List<DictionaryTreeInfo> DictionaryList = new List<DictionaryTreeInfo>();
-            for(int i=0;i<ids.Split('^').Length;i++)
+            for (int i = 0; i < ids.Split('^').Length; i++)
             {
                 if (string.IsNullOrWhiteSpace(ids.Split('^')[i])) continue;
                 DictionaryList.Add(new DictionaryTreeLogic().GetByID(ids.Split('^')[i]));
@@ -32,7 +32,7 @@ namespace MvcApplication1.Controllers
         {
             int TotalItems = 0;
             int PagesLength = 0;
-            List<ArticleInfo> ArticleInfoList = new ArticleLogic().Query(DicID, Title, currentPage, itemsPerPage, ref TotalItems, ref PagesLength);
+            List<ArticleInfo> ArticleInfoList = new ArticleLogic().Query(DicID, Title, null, currentPage, itemsPerPage, ref TotalItems, ref PagesLength);
             return new
             {
                 TotalItems = TotalItems,

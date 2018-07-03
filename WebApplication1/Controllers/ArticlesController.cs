@@ -18,11 +18,11 @@ namespace MvcApplication1.Controllers
         }
 
         // GET api/Articles
-        public object Get([FromUri]string DicIDs,string Title, int currentPage, int itemsPerPage)
+        public object Get([FromUri]string DicIDs,string Title,string BigPictureDisplay, int currentPage, int itemsPerPage)
         {
             int TotalItems = 0;
             int PagesLength = 0;
-            List<ArticleInfo> ArticleInfoList = new ArticleLogic().Query(DicIDs,Title, currentPage, itemsPerPage, ref TotalItems,ref PagesLength);
+            List<ArticleInfo> ArticleInfoList = new ArticleLogic().Query(DicIDs,Title, BigPictureDisplay, currentPage, itemsPerPage, ref TotalItems,ref PagesLength);
             return new
             {
                 TotalItems = TotalItems,

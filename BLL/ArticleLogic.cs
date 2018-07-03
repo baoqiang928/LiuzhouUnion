@@ -52,9 +52,9 @@ namespace BLL
         {
             return new ArticleDAL().GetByID(int.Parse(ID));
         }
-        public List<ArticleInfo> Query(string DicIDs, string Title, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
+        public List<ArticleInfo> Query(string DicIDs, string Title, string BigPictureDisplay, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
-            return new ArticleDAL().Query(DicIDs, Title, pageIndex, pageSize, ref totalItems, ref PagesLength);
+            return new ArticleDAL().Query(DicIDs, Title, BigPictureDisplay,pageIndex, pageSize, ref totalItems, ref PagesLength);
         }
     }
 }

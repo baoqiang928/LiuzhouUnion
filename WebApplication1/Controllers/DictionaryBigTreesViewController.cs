@@ -76,7 +76,18 @@ namespace MvcApplication1.Controllers
                 }
                 return nodes;
             }
-
+            if (OpeType == "GetChildren")
+            {
+                if (!string.IsNullOrWhiteSpace(FatherIDs)) FatherIDs = FatherIDs.Replace("\"", "");
+                List<DictionaryTreeInfo> Children = new DictionaryTreeLogic().GetSons(int.Parse(FatherIDs));
+                List<TreeNodeInfo> nodes = new List<TreeNodeInfo>();
+                foreach (DictionaryTreeInfo TreeInfo in Children)
+                {
+                    nodes.Add(new TreeNodeInfo() { name = TreeInfo.Name, id = TreeInfo.ID.ToString(), isParent = true });
+                }
+                return nodes;
+            }
+            
             if (OpeType == "GetRador")
             {
                 List<RadorInfo> RadorInfoList = new List<RadorInfo>();

@@ -150,7 +150,7 @@ namespace DAL
             return new ArticleInfo();
         }
 
-        public List<ArticleInfo> Query(string DicIDs, string Title, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
+        public List<ArticleInfo> Query(string DicIDs, string Title,string BigPictureDisplay, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
             int startRow = (pageIndex - 1) * pageSize;
             Expression<Func<tbl_ArticleInfo, bool>> where = PredicateExtensionses.True<tbl_ArticleInfo>();
@@ -159,6 +159,8 @@ namespace DAL
             //if (!string.IsNullOrWhiteSpace(DicID))
             //    where = where.And(a => a.DicIDs==int.Parse(DicID));
 
+            if (!string.IsNullOrWhiteSpace(BigPictureDisplay))
+                where = where.And(a => a.BigPictureDisplay == BigPictureDisplay);
 
             if (!string.IsNullOrWhiteSpace(Title))
                 where = where.And(a => a.Title.Contains(Title));

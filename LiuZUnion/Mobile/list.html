@@ -1,6 +1,6 @@
 ﻿<div ng-controller="ListCtrl">
     <div infinite-scroll='loadMore()' infinite-scroll-disabled='busy' infinite-scroll-distance='4' infinite-scroll-immediate-check ="false">
-        <a ng-repeat="ArticleInfo in ArticleInfoList | filter:NormalFilter" class="list_item js_post" ng-click="ShowArticle(ArticleInfo.ID,ArticleInfo.ColumnName)">
+        <a ng-repeat="ArticleInfo in ArticleInfoList | filter:NormalFilter" class="list_item js_post" ng-click="ShowArticle(ArticleInfo.ID,ArticleInfo.DicIDs)">
             <div class="cover">
                 <img class="img js_img" src="{{ArticleInfo.CoverPicUrl}}" alt="">
             </div>

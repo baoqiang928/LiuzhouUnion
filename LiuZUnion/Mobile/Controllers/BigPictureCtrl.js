@@ -1,14 +1,11 @@
 ﻿angular.module("myApp")
     .controller('BigPictureCtrl', function ($scope, $location,$http, requestService, $state, $stateParams, locals) {
-        if (GetUserID($stateParams.UserID, locals.get("UserID")) == "-1") return;
-        $scope.UserID = GetUserID($stateParams.UserID, locals.get("UserID"));
-        locals.set("UserID", $scope.UserID);
 
         $scope.data1 = {
             currentPage: "1",
             itemsPerPage: "3",
-            UserID: $scope.UserID,
-            ColumnName: "",
+            Title: "",
+            DicIDs: "",
             BigPictureDisplay: "True"
         };
         $scope.data1.currentPage = 1;
