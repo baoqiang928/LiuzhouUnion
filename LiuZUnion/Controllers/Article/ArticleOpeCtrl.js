@@ -1,3 +1,35 @@
+
+String.prototype.replaceAll = stringReplaceAll;
+
+function stringReplaceAll(AFindText, ARepText) {
+    var raRegExp = new RegExp(AFindText.replace(/([\(\)\[\]\{\}\^\$\+\-\*\?\.\"\'\|\/\\])/g, "\\$1"), "ig");
+    return this.replace(raRegExp, ARepText);
+}
+
+function ReplaceChar(src) {
+    if ((src == null) || (typeof src == 'undefined'))
+    {
+        return;
+    }
+    src = src.replaceAll('<', 'xiaoyuhao');
+    src = src.replaceAll('>', 'dayuhao');
+    src = src.replaceAll('=', 'dengyuhao');
+    src = src.replaceAll(' ', 'kongge');
+    src = src.replaceAll('?', 'wenhao');
+    src = src.replaceAll('/', 'xiegang');
+    src = src.replaceAll('\r', 'xiegangr');
+    src = src.replaceAll('\n', 'xiegangn');
+    src = src.replaceAll(':', 'maohao');
+    src = src.replaceAll('%', 'baifenhao');
+    src = src.replaceAll(';', 'xiaofenhao');
+    src = src.replaceAll('.', 'dian');
+    src = src.replaceAll('_', 'xiahuaxian');
+    src = src.replaceAll('"', 'shuangyinhao');
+    //src = src.replaceAll('http', 'sdmfsdfsqdssddddd');
+    //src = src.replaceAll('https', 'asdgghhheererss');
+    return src;
+}
+
 angular.module("myApp")
     .controller('ArticleOpeCtrl', function ($scope, $location, requestService, $stateParams, $state) {
         $scope._simpleConfig = {
@@ -54,20 +86,11 @@ angular.module("myApp")
                     return false;
                 }
 
-                $scope.data.Note = $scope.data.Note.replace(/</g, 'xiaoyuhao');
-                $scope.data.Note = $scope.data.Note.replace(/>/g, 'dayuhao');
-                $scope.data.Note = $scope.data.Note.replace(/=/g, 'dengyuhao');
-                //$scope.data.Note = $scope.data.Note.replace(/ /g, 'kongge');
-                $scope.data.Note = $scope.data.Note.replace(/src/g, 'aisierxi');
-                //$scope.data.Note = $scope.data.Note.replace(/?/g, 'wenhao');
-                //$scope.data.Note = $scope.data.Note.replace(///g, 'xiegang');
-                //$scope.data.Note = $scope.data.Note.replace(/\r/g, 'xiegangr');
-                //$scope.data.Note = $scope.data.Note.replace(/\n/g, 'xiegangn');
-                $scope.data.Note = $scope.data.Note.replace(/:/g, 'maohao');
-                $scope.data.Note = $scope.data.Note.replace(/%/g, 'baifenhao');
-                $scope.data.Note = $scope.data.Note.replace(/;/g, 'xiaofenhao');
 
-                console.log("$scope.data", $scope.data);
+                $scope.data.Note = ReplaceChar($scope.data.Note);
+                $scope.data.CoverPicUrl = ReplaceChar($scope.data.CoverPicUrl);
+                $scope.data.FirstPicUrl = ReplaceChar($scope.data.FirstPicUrl);
+
                 if ($stateParams.ID == "") {
                     requestService.add(Sources, $scope.data).then(function (data) {
                         alert('保存成功。');
@@ -165,4 +188,3 @@ angular.module("myApp")
 
 
     });//end
-

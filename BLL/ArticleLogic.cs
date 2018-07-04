@@ -32,20 +32,29 @@ namespace BLL
             return ArticleInfo.ID ?? 0;
         }
 
+        private string CleanChar(string src)
+        {
+            src = src.Replace("xiaoyuhao", "<");
+            src = src.Replace("dayuhao", ">");
+            src = src.Replace("dengyuhao", "=");
+            src = src.Replace("kongge", " ");
+            src = src.Replace("wenhao", "?");
+            src = src.Replace("xiegang", "/");
+            src = src.Replace("xiegangr", "\r");
+            src = src.Replace("xiegangn", "\n");
+            src = src.Replace("maohao", ":");
+            src = src.Replace("baifenhao", "%");
+            src = src.Replace("xiaofenhao", ";");
+            src = src.Replace("dian", ".");
+            src = src.Replace("xiahuaxian", "_");
+            src = src.Replace("shuangyinhao", "\"");
+            return src;
+        }
+
         private void ReplaceChar(ArticleInfo ArticleInfo)
         {
-            ArticleInfo.Note = ArticleInfo.Note.Replace("xiaoyuhao", "<");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("dayuhao", ">");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("dengyuhao", "=");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("kongge", " ");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("aisierxi", "src");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("wenhao", "?");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("xiegang", "/");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("xiegangr", "\r");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("xiegangn", "\n");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("maohao", ":");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("baifenhao", "%");
-            ArticleInfo.Note = ArticleInfo.Note.Replace("xiaofenhao", ";");
+            ArticleInfo.Note = CleanChar(ArticleInfo.Note);
+            ArticleInfo.CoverPicUrl = CleanChar(ArticleInfo.CoverPicUrl);
         }
 
         public ArticleInfo GetByID(string ID)
@@ -54,7 +63,7 @@ namespace BLL
         }
         public List<ArticleInfo> Query(string DicIDs, string Title, string BigPictureDisplay, int pageIndex, int pageSize, ref int totalItems, ref int PagesLength)
         {
-            return new ArticleDAL().Query(DicIDs, Title, BigPictureDisplay,pageIndex, pageSize, ref totalItems, ref PagesLength);
+            return new ArticleDAL().Query(DicIDs, Title, BigPictureDisplay, pageIndex, pageSize, ref totalItems, ref PagesLength);
         }
     }
 }
