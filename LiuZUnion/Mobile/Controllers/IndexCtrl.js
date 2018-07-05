@@ -25,6 +25,11 @@
         $scope.goto = function (ColumnID) {
             $("#js_plugins_loading").attr("style", "");
             $scope.CurrentColumnID = ColumnID;
+            if (ColumnID == "59")
+            {
+                $state.go("brandlist", { "ColumnID": ColumnID });
+                return;
+            }
             $state.go("list", { "ColumnID": ColumnID });
         };
 

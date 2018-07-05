@@ -196,6 +196,14 @@
     <Content Include="Controllers\User.js" />
     <Content Include="Controllers\UserOpeCtrl.js" />
     <Content Include="Controllers\weixinpicture.js" />
+    <Content Include="Doc\历史数据导入\100.sql" />
+    <Content Include="Doc\历史数据导入\150.sql" />
+    <Content Include="Doc\历史数据导入\200.sql" />
+    <Content Include="Doc\历史数据导入\250.sql" />
+    <Content Include="Doc\历史数据导入\300.sql" />
+    <Content Include="Doc\历史数据导入\350.sql" />
+    <Content Include="Doc\历史数据导入\397.sql" />
+    <Content Include="Doc\历史数据导入\error.sql" />
     <Content Include="Doc\图标不显示.txt" />
     <Content Include="dropzone.html" />
     <Content Include="elements.html" />
@@ -227,6 +235,7 @@
     <Content Include="js\common\common.js" />
     <Content Include="js\common\zepto.js" />
     <Content Include="login.html" />
+    <Content Include="Mobile\1.jpg" />
     <Content Include="Mobile\A.js" />
     <Content Include="Mobile\aa.js" />
     <Content Include="Mobile\assets\js\angular-sanitize.min.js" />
@@ -245,6 +254,7 @@
     <Content Include="Mobile\assets\ngInfiniteScroll-master\test\spec\ng-infinite-scroll.js" />
     <Content Include="Mobile\assets\ngInfiniteScroll-master\test\spec\ng-infinite-scroll.min.js" />
     <Content Include="Mobile\assets\ngInfiniteScroll-master\test\spec\ng-infinite-scroll.spec.js" />
+    <Content Include="Mobile\BrandList.html" />
     <Content Include="Mobile\Controllers\App.js" />
     <Content Include="Mobile\Controllers\BigPictureCtrl.js" />
     <Content Include="Mobile\Controllers\constant.js" />
@@ -278,6 +288,7 @@
     <Content Include="Mobile\sazh_files\index23b0e8.css" />
     <Content Include="Mobile\sazh_files\soon322696.js" />
     <Content Include="Mobile\Scripts\jweixin-1.0.0.js" />
+    <Content Include="Mobile\style.css" />
     <Content Include="Mobile\t.html" />
     <Content Include="Mobile\test.html" />
     <Content Include="Mobile\TestUrl.txt" />
@@ -2474,6 +2485,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Mobile_old\webapi\" />
     <Folder Include="Models\" />
+    <Folder Include="NewFolder1\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
   </ItemGroup>

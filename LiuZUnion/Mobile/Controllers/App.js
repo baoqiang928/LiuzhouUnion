@@ -30,6 +30,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             url: "/detail/?{ID}&{ColID}&{ColumnID}",
             templateUrl: "../Mobile/DetailInfo.html"
         })
+        .state("brandlist", {
+            params: { "ColID": ColID, "ColumnID": null },
+            url: "/brandlist?{ColID}&{ColIndex}",
+            templateUrl: "../Mobile/BrandList.html"
+        })
         .state("list", {
             params: { "ColID": ColID, "ColumnID": null },
             url: "/list?{ColID}&{ColIndex}",

@@ -33,14 +33,14 @@ namespace WebApplication1
 
             List<AtclInfo> ArticleInfoList = GetArticleInfoList(src);
 
-            for (int i = 0; i < 50; i++)
+            //for (int i = 0; i < 50; i++)
             //for (int i = 51; i < 100; i++)
             //for (int i = 101; i < 150; i++)
             //for (int i = 151; i < 200; i++)
             //for (int i = 201; i < 250; i++)
             //for (int i = 251; i < 300; i++)
             //for (int i = 301; i < 350; i++)
-            //for (int i = 351; i < 397; i++)
+            for (int i = 351; i < 397; i++)
             {
                 AtclInfo item = ArticleInfoList[i];
                 src = GetHttpWebRequest("http://kygroup.cc/szgw/www/?p=" + item.ID);
@@ -57,7 +57,7 @@ namespace WebApplication1
                 {
                     string aaa = "";
                 }
-                TextBox1.Text += "insert into [tbl_ArticleInfo]([ImportID],[Title],[ImportCatalog],[Note],[ImportPublicDate],[SerialNum]) select '"+ item.ID+ "','"+ item.Title.Replace("选择","")+ "','"+ item .Catalog+ "','"+ item .Note.Replace("'","''")+ "','"+ item .PublicDate+ "','0';";
+                TextBox1.Text += "insert into [tbl_ArticleInfo]([ImportID],[Title],[ImportCatalog],[Note],[ImportPublicDate],[SerialNum]) select '"+ item.ID+ "','"+ item.Title.Replace("选择","")+ "','"+ item .Catalog+ "','"+ item .Note.Replace("'","''")+ "','','0';";
                 TextBox1.Text += "\r\n";
             }
         }
