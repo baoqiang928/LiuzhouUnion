@@ -83,7 +83,7 @@ namespace MvcApplication1.Controllers
                 List<TreeNodeInfo> nodes = new List<TreeNodeInfo>();
                 foreach (DictionaryTreeInfo TreeInfo in Children)
                 {
-                    nodes.Add(new TreeNodeInfo() { name = TreeInfo.Name, id = TreeInfo.ID.ToString(), isParent = true });
+                    nodes.Add(new TreeNodeInfo() { name = TreeInfo.Name, id = TreeInfo.ID.ToString(), isParent = true, CoverPicUrl = new ArticleInfo().getimgurl(TreeInfo.Note) });
                 }
                 return nodes;
             }

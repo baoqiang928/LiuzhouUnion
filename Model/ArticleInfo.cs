@@ -138,6 +138,7 @@ namespace Model
         /// 
         public string getimgurl(string html)
         {
+            if (string.IsNullOrWhiteSpace(html)) return "";
             List<string> resultStr = new List<string>();
             html = html.ToLower().Replace("'", "").Replace("\"", "").Replace("<img ", "^");
             if (html.Split('^').Length >= 2)
@@ -147,6 +148,7 @@ namespace Model
             html = html.ToLower().Replace("src=", "^").Replace("/>", "^");
             if (html.Split('^').Length > 2)
             {
+                if (html.Split('^')[1].Contains(" ")) return html.Split('^')[1].Split(' ')[0];
                 return html.Split('^')[1];
             }
             else

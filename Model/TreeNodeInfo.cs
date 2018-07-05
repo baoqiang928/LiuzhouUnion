@@ -51,5 +51,21 @@ namespace Model
         }
 
         private bool _isParent = false;
+
+
+        public string CoverPicUrl
+        {
+            get
+            {
+                return _CoverPicUrl;
+            }
+
+            set
+            {
+                _CoverPicUrl = value;
+            }
+        }
+        private string _CoverPicUrl = "";
+
     }
 }

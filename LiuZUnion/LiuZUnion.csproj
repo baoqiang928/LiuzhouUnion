@@ -203,6 +203,7 @@
     <Content Include="Doc\历史数据导入\300.sql" />
     <Content Include="Doc\历史数据导入\350.sql" />
     <Content Include="Doc\历史数据导入\397.sql" />
+    <Content Include="Doc\历史数据导入\all.txt" />
     <Content Include="Doc\历史数据导入\error.sql" />
     <Content Include="Doc\图标不显示.txt" />
     <Content Include="dropzone.html" />
@@ -257,6 +258,7 @@
     <Content Include="Mobile\BrandList.html" />
     <Content Include="Mobile\Controllers\App.js" />
     <Content Include="Mobile\Controllers\BigPictureCtrl.js" />
+    <Content Include="Mobile\Controllers\BrandListCtrl.js" />
     <Content Include="Mobile\Controllers\constant.js" />
     <Content Include="Mobile\Controllers\DetailCtrl.js" />
     <Content Include="Mobile\Controllers\IndexCtrl.js" />
@@ -2485,7 +2487,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Mobile_old\webapi\" />
     <Folder Include="Models\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
   </ItemGroup>
