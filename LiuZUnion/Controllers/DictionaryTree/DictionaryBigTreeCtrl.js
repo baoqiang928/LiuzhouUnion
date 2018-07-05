@@ -1,35 +1,6 @@
 ﻿angular.module('myApp')
     .controller('DictionaryBigTreeCtrl', function ($scope, $rootScope, $location, requestService, $state, locals, $stateParams, APIUrl) {
         $scope.BigTreeProjectID = "0";
-        $scope._simpleConfig = {
-            //初始化编辑器内容  
-            content: '<p>test1</p>',
-            //是否聚焦 focus默认为false  
-            focus: true,
-            //首行缩进距离,默认是2em  
-            indentValue: '2em',
-            //初始化编辑器宽度,默认1000  
-            initialFrameWidth: '100%',
-            //初始化编辑器高度,默认320  
-            initialFrameHeight: 520,
-            //编辑器初始化结束后,编辑区域是否是只读的，默认是false  
-            readonly: false,
-            //启用自动保存  
-            enableAutoSave: false,
-            //自动保存间隔时间， 单位ms  
-            saveInterval: 500,
-            //是否开启初始化时即全屏，默认关闭  
-            fullscreen: false,
-            //图片操作的浮层开关，默认打开  
-            imagePopup: true,
-            //提交到后台的数据是否包含整个html字符串  
-            allHtmlEnabled: false,
-            //额外功能添加                 
-            functions: ['map', 'insertimage', 'insertvideo', 'attachment',
-            , 'insertcode', 'webapp', 'template',
-            'background', 'wordimage']
-        };
-
         if (typeof $stateParams.BigTreeProjectID != "undefined") {
             $scope.BigTreeProjectID = $stateParams.BigTreeProjectID;
         }
@@ -48,15 +19,42 @@
         $scope.TreeTypeID = "";
         if (typeof $stateParams.TreeTypeID == "undefined") {
             $scope.TreeTypeID = $scope.$parent.TreeTypeID;
-            console.log("$scope.parent.TreeTypeID", $scope.$parent.TreeTypeID);
         } else {
             $scope.TreeTypeID = $stateParams.TreeTypeID;
         }
 
-
-
+        //控制是否可以编辑
+        $scope.AllowedTreeEditable = true;
+        if ((typeof $scope.$parent == "undefined") || (typeof $scope.$parent.AllowedTreeEditable == "undefined")) {
+            $scope.AllowedTreeEditable = true;
+        } else {
+            $scope.AllowedTreeEditable = $scope.$parent.AllowedTreeEditable;
+        }
 
         $scope.PageTitle = $stateParams.Title;
+
+        $scope.$on("FilterTreeParentNodes", function (event, msg) {
+            SetNullNodeData();//清空上次选择信息。未来可以不放在这里。
+            $scope.ShowAllNodes();
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
+            var nodes = zTree.getNodes(true);
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].level != "0") continue;
+                //console.log("nodes[" + i + "]", mytrim(nodes[i]));
+                if (msg.indexOf(mytrim(nodes[i].name)) < 0) {
+                    zTree.hideNode(nodes[i]);
+                }
+            }
+        });
+
+        $scope.ShowAllNodes = function () {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
+            var nodes = zTree.getNodes(true);
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].level != "0") continue;
+                zTree.showNode(nodes[i]);
+            }
+        };
 
         var iniTree = function () {
             $scope.data = {
@@ -65,15 +63,11 @@
                 FatherIDs: $scope.FatherIDs,
                 OpeType: "GetFathers"
             };
-            console.log("$scope.data", $scope.data);
             requestService.lists("DictionaryBigTreesView", $scope.data).then(function (data) {
                 var zNodes = data;
-                console.log("zNodes", zNodes);
                 var setting = {
                     async: {
                         enable: true,
-                        //url: "http://localhost:2072/api/DictionaryBigTreesView/",
-                        //url: "http://101.201.67.155:81/api/DictionaryBigTreesView/",
                         url: "http://" + APIUrl[0].url + "/api/DictionaryBigTreesView/",
                         autoParam: ["id=NodeID", "name=NodeName", "level=TreeLevel"],
                         otherParam: { "ProjectID": $scope.CurrentProjectID, "TreeTypeID": $stateParams.TreeTypeID, "OpeType": "View" }
@@ -104,9 +98,9 @@
                         beforeRemove: beforeRemove,
                         beforeRename: beforeRename,
                         onClick: onClick
-                    }
+                }
                 };
-                $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+                $.fn.zTree.init($("#treeDemo1"), setting, zNodes);
 
             });
         }
@@ -117,6 +111,7 @@
         startTime = 0, endTime = 0, perCount = 100, perTime = 100;
 
         function showRemoveBtn(treeId, treeNode) {
+            if (!$scope.AllowedTreeEditable) return false;
             return !treeNode.isParent;
         }
         function beforeExpand(treeId, treeNode) {
@@ -134,7 +129,7 @@
             //if (!msg || msg.length == 0) {
             //    return;
             //}
-            //var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+            //var zTree = $.fn.zTree.getZTreeObj("treeDemo1"),
             //totalCount = treeNode.count;
             //if (treeNode.children.length < totalCount) {
             //    setTimeout(function () { ajaxGetNodes(treeNode); }, perTime);
@@ -149,14 +144,15 @@
             //    showLog("加载完毕，共进行 " + (treeNode.times - 1) + " 次异步加载, 耗时：" + usedTime + " 秒");
             //}
         }
+
         function onAsyncError(event, treeId, treeNode, XMLHttpRequest, textStatus, errorThrown) {
-            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
             alert("异步获取数据出现异常。");
             treeNode.icon = "";
             zTree.updateNode(treeNode);
         }
         function ajaxGetNodes(treeNode, reloadType) {
-            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
             if (reloadType == "refresh") {
                 treeNode.icon = "../../../css/zTreeStyle/img/loading.gif";
                 zTree.updateNode(treeNode);
@@ -178,6 +174,13 @@
         //	ms = now.getMilliseconds();
         //    return (h + ":" + m + ":" + s + " " + ms);
         //}
+        //清空右侧信息。
+        function SetNullNodeData() {
+            $scope.nodeData.ID = "";
+            $scope.nodeData.Name = "";
+            $scope.nodeData.Note = "";
+            $scope.nodeData.Remark = "";
+        }
         $scope.nodeData = function () {
             this.ID = "";
             this.Name = "";
@@ -195,7 +198,7 @@
 
         }
         function beforeRemove(treeId, treeNode) {
-            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
             zTree.selectNode(treeNode);
             if (confirm("确认删除 节点 -- " + treeNode.name + " 吗？")) {
                 requestService.delete("DictionaryTrees", treeNode.id).then(function (data) { });
@@ -206,7 +209,7 @@
         function beforeRename(treeId, treeNode, newName) {
             if (newName.length == 0) {
                 setTimeout(function () {
-                    var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+                    var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
                     zTree.cancelEditName();
                     alert("节点名称不能为空.");
                 }, 0);
@@ -218,7 +221,7 @@
         $scope.Name = "";
         $scope.CurrentNode = {};
         function addHoverDom(treeId, treeNode) {
-
+            if (!$scope.AllowedTreeEditable) return;
             var sObj = $("#" + treeNode.tId + "_span");
             if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
             var addStr = "<span class='button edit' id='addBtn_" + treeNode.tId
@@ -229,7 +232,7 @@
                 $scope.CurrentNode = treeNode;
                 $scope.CurrentOperate = "Add";
                 $('#modal-table').modal('show');
-                //var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+                //var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
                 //zTree.addNodes(treeNode, { id: (100 + newCount), pId: treeNode.id, name: "new node" + (newCount++) });
                 return false;
             });
@@ -247,12 +250,11 @@
                     pId = $scope.CurrentNode.id;
                 }
                 //展开这个节点，否则会重复增加两个。
-                var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-                console.log("zTree", zTree);
+                var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
                 zTree.expandNode($scope.CurrentNode, true, null, null, true);
 
                 requestService.add("DictionaryTrees", NodeInfo).then(function (data) {
-                    var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+                    var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
                     zTree.addNodes($scope.CurrentNode, { id: data, pId: pId, name: $scope.Name });
                     alert("保存成功。");
                     $('#modal-table').modal('hide');
@@ -269,26 +271,31 @@
             $scope.CurrentNode = null;
             $scope.CurrentOperate = "Add";
             $('#modal-table').modal('show');
-            //var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-            //var nodes = zTree.getSelectedNodes();
-            //console.log("nodes", nodes);
-            //for (var i = 0, l = nodes.length; i < l; i++) {
-            //    nodes[i].name = "4444433333222111";
-            //    zTree.updateNode(nodes[i]);
-            //}
         };
 
 
         $scope.UpdateCurrentNodeName = function () {
-            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo1");
             $scope.CurrentNode.name = $scope.nodeData.Name;
-            //var nodes = zTree.getSelectedNodes();
-            //console.log("nodes", nodes);
-            //for (var i = 0, l = nodes.length; i < l; i++) {
-            //    nodes[i].name = "4444433333222111";
             zTree.updateNode($scope.CurrentNode);
-            //}
-            console.log("$scope.CurrentNode", $scope.CurrentNode);
         };
 
     });//end
+
+
+
+function mytrim(str) {
+    //定义一个从前往后的变量
+    var start = 0;
+    //定义一个从后往前的变量
+    var end = str.length - 1;
+    //start<=end,防止传进来的字符串全是空格所做无用功
+    while (start <= end && str.charAt(start) == " ") {
+        start++;
+    }
+    while (start <= end && str.charAt(end) == " ") {
+        end--;
+    }
+    //substring函数特点包含头不包含尾，所以加1
+    return str.substring(start, end + 1);
+}

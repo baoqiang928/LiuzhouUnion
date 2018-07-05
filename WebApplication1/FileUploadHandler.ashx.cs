@@ -19,7 +19,7 @@ namespace WebApplication1
                 string guidFileName = Guid.NewGuid().ToString();
                 HttpPostedFile file = context.Request.Files[fname];
                 file.SaveAs(context.Server.MapPath("~/" + UPLOAD_RESOURCES_FOLDER_NAME) +
-                            "//" + guidFileName + file.FileName);
+                            "//" + file.FileName);
                 Uri addressUri = context.Request.Url;
                 string httpFilePath = string.Format("{0}://{1}/{2}/{3}",
                                                     addressUri.Scheme,

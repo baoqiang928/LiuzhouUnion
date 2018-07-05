@@ -11,7 +11,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
        .state("ArticleAdd", {
            params: { "ID": null },
            url: "/ArticleAdd",
-           templateUrl: "/pages/Article/ArticleOperate.html"
+           templateUrl: "/pages/Article/ArticleOperate.html?v=1"
        })
         .state("UserList", {
             url: "/UserList",
@@ -152,7 +152,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         .state("TechEvolveDictionaryTree", {
             params: { "TreeTypeID": "5", "Title": "栏目维护", "CurrentProjectID": "" },
             url: "/TechEvolveDictionaryTree",
-            templateUrl: "/pages/DictionaryTree/DictionaryBigTreeOpe.html"
+            templateUrl: "/pages/DictionaryTree/DictionaryBigTreeOpe.html?v=1"
         })
         //.state("TechEvolveDictionaryTree", {
         //    params: { "TreeTypeID": "4", "Title": "技术进化模式" },

@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ImportData.aspx" />
     <Content Include="index.html" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
     </Compile>
     <Compile Include="JsonDateTimeConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
