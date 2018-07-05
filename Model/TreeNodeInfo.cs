@@ -67,5 +67,19 @@ namespace Model
         }
         private string _CoverPicUrl = "";
 
+        public string Remark
+        {
+            get
+            {
+                return _Remark;
+            }
+
+            set
+            {
+                _Remark = value;
+            }
+        }
+        private string _Remark = "";
+
     }
 }

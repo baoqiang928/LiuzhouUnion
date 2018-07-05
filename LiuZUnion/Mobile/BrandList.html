@@ -5,8 +5,9 @@
             <div class="news" ng-repeat="ColumnInfo in ColumnInfoList">
                 <div class="news-focus">
                     <!--begin 6870318-0-1-->
-                    <div class="news-photo"><a ng-click="ShowColumn(ColumnInfo.ID)" target="_blank">
+                    <div class="news-photo"><a ng-click="ShowColumn(ColumnInfo.id)" target="_blank">
                         <img src="{{ColumnInfo.CoverPicUrl}}" border="0" width="557px" height="313px"></a></div>
+                    <h4><a ng-click="ShowColumn(ColumnInfo.ID)" target="_blank">{{ColumnInfo.Remark}}</a></h4>
                     <!--end 6870318-0-1-->
                 </div>
             </div>

@@ -25,7 +25,7 @@
         $scope.goto = function (ColumnID) {
             $("#js_plugins_loading").attr("style", "");
             $scope.CurrentColumnID = ColumnID;
-            if (ColumnID == "73")//52
+            if (ColumnID == "52")//73
             {
                 $state.go("brandlist", { "ColumnID": ColumnID });
                 return;
