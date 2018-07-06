@@ -4,19 +4,29 @@
             "name": "优资讯", 
             "sub_button": [
                 {
-                    "type": "click", 
-                    "name": "院校&导师", 
-                    "key": "SCHOOCL_TEACHER"
+                    "type": "view", 
+                    "name": "工会概况", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=49&ColIndex=1"
                 }, 
                 {
                     "type": "view", 
-                    "name": "快速登录", 
-                    "url": "http://www.uyanuxuan.com/index.php"
+                    "name": "工会要闻", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=52&ColIndex=1"
                 }, 
                 {
                     "type": "view", 
-                    "name": "导师计划", 
-                    "url": "http://www.uyanuxuan.com/index.php/Home/About/xsjh.html"
+                    "name": "工会品牌", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=53&ColIndex=1"
+                },
+                {
+                    "type": "view", 
+                    "name": "工会政策法规", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=55&ColIndex=1"
+                }, 
+                {
+                    "type": "view", 
+                    "name": "办事指南", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=56&ColIndex=1"
                 }
             ]
         }, 
@@ -24,19 +34,29 @@
             "name": "优服务", 
             "sub_button": [
                 {
-                    "type": "click", 
-                    "name": "院校&导师", 
-                    "key": "SCHOOCL_TEACHER"
+                    "type": "view", 
+                    "name": "便民服务", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=60&ColIndex=1"
                 }, 
                 {
                     "type": "view", 
-                    "name": "快速登录", 
-                    "url": "http://www.uyanuxuan.com/index.php"
-                }, 
+                    "name": "微信矩阵", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=61&ColIndex=1"
+                },
                 {
                     "type": "view", 
-                    "name": "导师计划", 
-                    "url": "http://www.uyanuxuan.com/index.php/Home/About/xsjh.html"
+                    "name": "律师咨询", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=62&ColIndex=1"
+                },
+                {
+                    "type": "view", 
+                    "name": "心理咨询", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=63&ColIndex=1"
+                },
+                {
+                    "type": "view", 
+                    "name": "站内搜索", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=64&ColIndex=1"
                 }
             ]
         }, 
@@ -45,13 +65,13 @@
             "sub_button": [
                 {
                     "type": "view", 
-                    "name": "正版软件", 
-                    "url": "http://www.xmypage.com/model2_37685.html"
+                    "name": "优惠购物信息", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=65&ColIndex=1"
                 }, 
                 {
                     "type": "view", 
-                    "name": "四六级冲刺", 
-                    "url": "https://h5.youyinian.cn/"
+                    "name": "我要留言", 
+                    "url": "http://lzjggh.com/Mobile/index.html#/list?ColID=67&ColIndex=1"
                 }
             ]
         }
