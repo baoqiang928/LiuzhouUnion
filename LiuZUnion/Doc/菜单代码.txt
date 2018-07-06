@@ -1,0 +1,59 @@
+{
+    "button": [
+		{
+            "name": "优资讯", 
+            "sub_button": [
+                {
+                    "type": "click", 
+                    "name": "院校&导师", 
+                    "key": "SCHOOCL_TEACHER"
+                }, 
+                {
+                    "type": "view", 
+                    "name": "快速登录", 
+                    "url": "http://www.uyanuxuan.com/index.php"
+                }, 
+                {
+                    "type": "view", 
+                    "name": "导师计划", 
+                    "url": "http://www.uyanuxuan.com/index.php/Home/About/xsjh.html"
+                }
+            ]
+        }, 
+        {
+            "name": "优服务", 
+            "sub_button": [
+                {
+                    "type": "click", 
+                    "name": "院校&导师", 
+                    "key": "SCHOOCL_TEACHER"
+                }, 
+                {
+                    "type": "view", 
+                    "name": "快速登录", 
+                    "url": "http://www.uyanuxuan.com/index.php"
+                }, 
+                {
+                    "type": "view", 
+                    "name": "导师计划", 
+                    "url": "http://www.uyanuxuan.com/index.php/Home/About/xsjh.html"
+                }
+            ]
+        }, 
+        {
+            "name": "优便捷", 
+            "sub_button": [
+                {
+                    "type": "view", 
+                    "name": "正版软件", 
+                    "url": "http://www.xmypage.com/model2_37685.html"
+                }, 
+                {
+                    "type": "view", 
+                    "name": "四六级冲刺", 
+                    "url": "https://h5.youyinian.cn/"
+                }
+            ]
+        }
+    ]
+}

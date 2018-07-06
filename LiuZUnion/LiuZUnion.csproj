@@ -206,6 +206,7 @@
     <Content Include="Doc\历史数据导入\all.txt" />
     <Content Include="Doc\历史数据导入\error.sql" />
     <Content Include="Doc\图标不显示.txt" />
+    <Content Include="Doc\菜单代码.txt" />
     <Content Include="dropzone.html" />
     <Content Include="elements.html" />
     <Content Include="Enterprise\Controllers\App.js" />
